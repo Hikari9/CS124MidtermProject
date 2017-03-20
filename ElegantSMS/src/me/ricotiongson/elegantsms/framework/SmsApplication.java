@@ -1,16 +1,17 @@
 package me.ricotiongson.elegantsms.framework;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.TreeSet;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
-import me.ricotiongson.elegantsms.dispatch.DispatchMethod;
 
 /**
  * Prepares SMS Module dispatching.
  */
 public class SmsApplication {
 
+    // collection of dispatchers for application
     private TreeSet<DispatchMethod> dispatchers = new TreeSet<>();
 
     /**
@@ -29,7 +30,7 @@ public class SmsApplication {
     public void addModule(SmsModule module) {
         for (Method method : module.getClass().getDeclaredMethods()) {
             method.setAccessible(true);
-            dispatchers.add(DispatchMethod.create(module, method));
+            dispatchers.add(new DispatchMethod(module, method));
         }
     }
 
@@ -57,14 +58,23 @@ public class SmsApplication {
         return app;
     }
 
-    public String dispatch(String message) {
-        // run through the services
-        return null;
+    public String dispatch(String message) throws SmsPatternMismatchError {
+        for (DispatchMethod method : dispatchers) {
+            if (method.matches(message)) {
+                return method.dispatch(message);
+            }
+        }
+        throw new SmsPatternMismatchError("no pattern found");
     }
 
     public String[] dispatchAll(String message) {
-        // collect all replies
-        return null;
+        ArrayList<String> replies = new ArrayList<>();
+        for (DispatchMethod method : dispatchers) {
+            if (method.matches(message)) {
+                replies.add(method.dispatch(message));
+            }
+        }
+        return replies.toArray(new String[0]);
     }
 
 

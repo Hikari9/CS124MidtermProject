@@ -2,23 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a698c96b-6388-4cb2-9838-664c264f60d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethod.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByName.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByOrder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/Priority.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/SmsPatternMismatchError.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/test/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/Priority.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/annotations/SMSQuery.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/annotations/SmsQuery.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SMSApplication.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SMSDispatcher.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsDispatcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SMSService.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsModule.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/test/services/NavigationService.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/NavigationModule.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/ricotiongson/cs124/midtermproject/Main.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/annotations/BindByName.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/annotations/BindByOrder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/annotations/BindParam.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethod.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByName.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByOrder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsDispatcher.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/Priority.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/Priority.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/SmsPatternMismatchError.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElegantSMS/ElegantSMS.iml" afterPath="$PROJECT_DIR$/ElegantSMS/ElegantSMS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MidtermProject.iml" afterPath="$PROJECT_DIR$/MidtermProject.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/NavigationModule.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/NavigationModule.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,51 +51,29 @@
         </entry>
       </file>
       <file leaf-file-name="DispatchMethod.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethod.java">
+        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="165" column="37" lean-forward="false" selection-start-line="165" selection-start-column="37" selection-end-line="165" selection-end-column="37" />
+            <state relative-caret-position="185">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DispatchMethodByOrder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DispatchMethodByName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#throwAnnotationError#0;class#DispatchMethod#0" expanded="false" />
+                <element signature="docComment;method#throwAnnotationError#1;class#DispatchMethod#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SmsPatternMismatchError.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/SmsPatternMismatchError.java">
+        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="85">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
-                <element signature="e#185#186#0" expanded="true" />
-                <element signature="e#208#209#0" expanded="true" />
-                <element signature="e#262#263#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#186#187#0" expanded="true" />
+                <element signature="e#209#210#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,8 +82,8 @@
       <file leaf-file-name="SmsApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+            <state relative-caret-position="226">
+              <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,30 +91,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JAVA/me.ricotiongson.elegantsms.test.Main" pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/me.ricotiongson.elegantsms.test.Main">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>me.ricotiongson.elegantsms.test.Main</OriginalElement>
-              <nodes>
-                <node x="0.0" y="0.0">me.ricotiongson.elegantsms.test.Main</node>
-              </nodes>
-              <notes />
-              <edges />
-              <settings layout="Hierarchic Group" zoom="1.0" x="-289.5" y="-133.0" />
-              <SelectedNodes>
-                <node>me.ricotiongson.elegantsms.test.Main</node>
-              </SelectedNodes>
-              <Categories />
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Priority.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/Priority.java">
+        <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/Priority.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -153,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/NavigationModule.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -231,12 +183,14 @@
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/Priority.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsDispatchException.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethodByName.java" />
-        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/Priority.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/SmsPatternMismatchError.java" />
-        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethod.java" />
-        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByOrder.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByName.java" />
+        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsDispatcher.java" />
+        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByOrder.java" />
+        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethod.java" />
+        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.java" />
+        <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" />
       </list>
     </option>
@@ -248,10 +202,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="278" />
-    <option name="y" value="52" />
-    <option name="width" value="1642" />
-    <option name="height" value="954" />
+    <option name="y" value="24" />
+    <option name="width" value="1920" />
+    <option name="height" value="982" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -387,29 +340,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dispatch" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MidtermProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MidtermProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ElegantSMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="elegantsms" />
+              <option name="myItemId" value="annotations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -792,28 +723,28 @@
       <updated>1489936024862</updated>
       <workItem from="1489936026443" duration="211000" />
       <workItem from="1489996391088" duration="986000" />
-      <workItem from="1489997457855" duration="20495000" />
+      <workItem from="1489997457855" duration="27120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21692000" />
+    <option name="totallyTimeSpent" value="28317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="278" y="52" width="1642" height="954" extended-state="4" />
+    <frame x="0" y="24" width="1920" height="982" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="1060" y="180" width="760" height="754" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="1314" y="241" width="760" height="754" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25813952" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23322684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -897,9 +828,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,9 +928,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,9 +936,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="8" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,9 +952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,14 +1009,6 @@
           <Categories />
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,10 +1071,26 @@
     <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/NavigationModule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,37 +1102,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="165" column="37" lean-forward="false" selection-start-line="165" selection-start-column="37" selection-end-line="165" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/DispatchMethodByOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="413">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/Priority.java">
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/Priority.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -1209,23 +1118,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/dispatch/SmsPatternMismatchError.java">
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="e#185#186#0" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#186#187#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#throwAnnotationError#0;class#DispatchMethod#0" expanded="false" />
+            <element signature="docComment;method#throwAnnotationError#1;class#DispatchMethod#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/ElegantSMS/lib/fast-classpath-scanner-2.0.17.jar!/io/github/lukehutch/fastclasspathscanner/matchprocessor/SubclassMatchProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        <state relative-caret-position="226">
+          <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

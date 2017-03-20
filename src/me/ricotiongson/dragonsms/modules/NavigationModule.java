@@ -1,13 +1,11 @@
 package me.ricotiongson.dragonsms.modules;
 
-import me.ricotiongson.elegantsms.annotations.BindByOrder;
 import me.ricotiongson.elegantsms.annotations.CaseSensitive;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.framework.SmsModule;
-import me.ricotiongson.elegantsms.dispatch.Priority;
+import me.ricotiongson.elegantsms.framework.Priority;
 
-@BindByOrder
 public class NavigationModule implements SmsModule {
 
     @SmsQuery("REGISTER <NAME>")

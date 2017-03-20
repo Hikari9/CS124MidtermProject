@@ -1,4 +1,4 @@
-package me.ricotiongson.elegantsms.dispatch;
+package me.ricotiongson.elegantsms.framework;
 
 /**
  * Exception class for dispatch errors.
