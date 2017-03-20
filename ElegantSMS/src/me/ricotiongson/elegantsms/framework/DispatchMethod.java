@@ -12,6 +12,7 @@ import me.ricotiongson.elegantsms.annotations.ArrayDelim;
 import me.ricotiongson.elegantsms.annotations.CaseSensitive;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
+import me.ricotiongson.elegantsms.util.TypeConverter;
 
 /**
  * Holder class for dispatching methods (package-private)
@@ -227,12 +228,12 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         int size = Math.min(args.length, matcher.groupCount());
         for (int i = 0; i < size; ++i) {
             if (!identifierIsArray[i]) {
-                args[i] = typeConversion(matcher.group(i + 1).trim(), identifierParams[i]);
+                args[i] = TypeConverter.convertParameter(matcher.group(i + 1).trim(), identifierParams[i]);
 
             } else {
                 ArrayDelim delim = identifierParams[i].getDeclaredAnnotation(ArrayDelim.class);
                 String delimRegex = delim == null ? "\\s+" : delim.value();
-                args[i] = typeConversion(matcher.group(i + 1).trim().split(delimRegex), identifierParams[i]);
+                args[i] = TypeConverter.convertParameter(matcher.group(i + 1).trim().split(delimRegex), identifierParams[i]);
             }
         }
 
@@ -243,103 +244,6 @@ class DispatchMethod implements Comparable<DispatchMethod> {
             throw new SmsPatternMismatchError(e.getMessage());
         }
 
-    }
-
-    private Object typeConversion(String arg, Parameter param) {
-        return typeConversion(arg, param.getType());
-    }
-
-    private Object typeConversion(String arg, Class<?> type) {
-        if (type.equals(String.class))      return arg;
-        if (type.equals(int.class))         return (int) Integer.parseInt(arg);
-        if (type.equals(Integer.class))     return Integer.parseInt(arg);
-        if (type.equals(long.class))        return (long) Long.parseLong(arg);
-        if (type.equals(Long.class))        return Long.parseLong(arg);
-        if (type.equals(boolean.class))     return (boolean) Boolean.parseBoolean(arg);
-        if (type.equals(Boolean.class))     return Boolean.parseBoolean(arg);
-        if (type.equals(short.class))       return (short) Short.parseShort(arg);
-        if (type.equals(Short.class))       return Short.parseShort(arg);
-        if (type.equals(byte.class))        return (short) Byte.parseByte(arg);
-        if (type.equals(Byte.class))        return Byte.parseByte(arg);
-        if (type.equals(char.class))        return arg.charAt(0);
-        if (type.equals(Character.class))   return (Character) arg.charAt(0);
-        return arg;
-    }
-
-    private Object typeConversion(String[] arg, Parameter param) {
-        Class<?> type = param.getType();
-        if (type.equals(String[].class))
-            return arg;
-        if (type.equals(int[].class)) {
-            int[] ans = new int[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = (int) Integer.parseInt(arg[i]);
-            return ans;
-        }
-        if (type.equals(Integer[].class)) {
-            Integer[] ans = new Integer[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = Integer.parseInt(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(long[].class)){
-            long[] ans = new long[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = (long) Long.parseLong(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(Long[].class)) {
-            Long[] ans = new Long[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = Long.parseLong(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(Boolean[].class)) {
-            Boolean[] ans = new Boolean[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = Boolean.parseBoolean(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(boolean[].class))         {
-            boolean[] ans = new boolean[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = (boolean) Boolean.parseBoolean(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(Short[].class)) {
-            Short[] ans = new Short[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = Short.parseShort(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(short[].class))         {
-            short[] ans = new short[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = (short) Short.parseShort(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(Byte[].class))         {
-            short[] ans = new short[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = (byte) Byte.parseByte(arg[i]);
-            return ans;
-        }
-
-        if (type.equals(byte[].class))         {
-            short[] ans = new short[arg.length];
-            for (int i = 0; i < arg.length; ++i)
-                ans[i] = (byte) Byte.parseByte(arg[i]);
-            return ans;
-        }
-
-        return arg;
     }
 
     /**

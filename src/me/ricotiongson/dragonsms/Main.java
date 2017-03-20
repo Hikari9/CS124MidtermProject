@@ -2,7 +2,6 @@ package me.ricotiongson.dragonsms;
 
 import java.util.Scanner;
 
-import me.ricotiongson.dragonsms.modules.NavigationModule;
 import me.ricotiongson.elegantsms.framework.SmsApplication;
 import me.ricotiongson.elegantsms.framework.SmsPatternMismatchError;
 
@@ -13,7 +12,6 @@ public class Main {
 
         // load application from package
         SmsApplication dragonSMS = SmsApplication.fromPackage("me.ricotiongson.dragonsms.modules");
-        System.out.println(dragonSMS.dispatch("HINT"));
         // scan messages from console
         Scanner sc = new Scanner(System.in);
         while (sc.hasNextLine()) {

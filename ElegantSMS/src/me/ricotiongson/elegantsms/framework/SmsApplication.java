@@ -10,6 +10,7 @@ import java.util.TreeSet;
 import java.util.concurrent.ConcurrentSkipListSet;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
+import me.ricotiongson.elegantsms.annotations.SmsQuery;
 
 /**
  * Prepares SMS Module dispatching.
@@ -36,7 +37,8 @@ public class SmsApplication {
     public void addModule(SmsModule module) {
         for (Method method : module.getClass().getDeclaredMethods()) {
             method.setAccessible(true);
-            dispatchers.add(new DispatchMethod(module, method));
+            if (method.isAnnotationPresent(SmsQuery.class))
+                dispatchers.add(new DispatchMethod(module, method));
         }
     }
 
