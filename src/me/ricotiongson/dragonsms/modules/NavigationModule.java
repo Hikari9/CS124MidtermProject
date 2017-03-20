@@ -1,5 +1,7 @@
 package me.ricotiongson.dragonsms.modules;
 
+import java.util.Arrays;
+
 import me.ricotiongson.elegantsms.annotations.CaseSensitive;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
@@ -8,12 +10,12 @@ import me.ricotiongson.elegantsms.framework.Priority;
 
 public class NavigationModule implements SmsModule {
 
-    @SmsQuery("REGISTER <NAME>")
-    public String register(String name) {
+    @SmsQuery("REGISTER <NAME>/<AGE>")
+    public String register(String name, int age) {
         /* TODO
             - Store name in session
          */
-        return "Hello, " + name + ", welcome to DragonSMS";
+        return "Hello, " + name + ":" + age + ", welcome to DragonSMS";
     }
 
     @SmsQuery("START")
@@ -43,6 +45,7 @@ public class NavigationModule implements SmsModule {
             - Invoke the supplied command (with the params as needed) with current room and session
             - Returned gameState should be stored in session
          */
+        System.out.println(command + ": " + Arrays.toString(params));
         return "<Reply based on room and gameState>";
     }
 

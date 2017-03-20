@@ -3,10 +3,13 @@ package me.ricotiongson.elegantsms.framework;
 import java.lang.annotation.AnnotationFormatError;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
+import me.ricotiongson.elegantsms.annotations.ArrayDelim;
 import me.ricotiongson.elegantsms.annotations.CaseSensitive;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
@@ -16,49 +19,14 @@ import me.ricotiongson.elegantsms.annotations.SmsQuery;
  */
 class DispatchMethod implements Comparable<DispatchMethod> {
 
-    /**
-     * Dispatches a message that matches a pattern in one of the modules of this application.
-     * If there exists more than one pattern that matches the message, the method with the higher
-     * priority (class first then method) will be dispatched.
-     *
-     * @param message the message to be processed by this dispatcher
-     * @throws SmsPatternMismatchError when dispatch method for message cannot be found
-     * @return the reply of the dispatcher
-     */
-    public String dispatch(String message) throws SmsPatternMismatchError {
-
-        // run through the pattern, otherwise throw an error if Pattern does not match
-        Matcher matcher = pattern.matcher(message);
-        if (!matcher.matches())
-            throw new SmsPatternMismatchError("message does not match Pattern");
-
-        // dynamically construct arguments
-        Object[] args = new Object[identifierParams.length];
-        Arrays.fill(args, null);
-
-        // iterate order
-        int size = Math.min(args.length, matcher.groupCount());
-        for (int i = 0; i < size; ++i) {
-            args[i] = matcher.group(i + 1);
-        }
-
-        // invoke method
-        try {
-            return (String) method.invoke(module, args);
-        } catch (Exception e) {
-            throw new SmsPatternMismatchError(e.getMessage());
-        }
-
-    }
-
     // module props
     protected SmsModule module;
     protected Method method;
     protected Class<? extends SmsModule> moduleClass;
 
     // priority props
-    protected int classPriority;
-    protected int methodPriority;
+    protected int classPriority = Priority.DEFAULT;
+    protected int methodPriority = Priority.DEFAULT;
 
     // identifier for each token
     protected Pattern pattern;
@@ -95,14 +63,10 @@ class DispatchMethod implements Comparable<DispatchMethod> {
 
 
     // holder class for pre-compiled patterns
-    private static final class Patterns {
-        static final Pattern nameTokenizer = Pattern.compile("<([^<>]+)(\\.\\.\\.)?>");
-        //        static final Pattern bracketIterator = Pattern.compile("(<\\s*[^<>\\s]+\\s*>)");
-        static final String literal = "(?:[^<>()\\]|\\\\.)+";
-        static final String variable = nameTokenizer.pattern().replace("(", "(?:");
-        //        static final String literalUnion = String.format("\\(%s(?:\\|%s)*)", literal, literal);
-        static final Pattern queryTokenizer = Pattern.compile(String.format("(%s|%s)*", literal, variable));
-    }
+//    private static final String literal = "(?:[^<>]|\\\\.)+";
+    private static final String literal = "[^<>]+";
+    private static final String variable = "<([^<>]+)(\\.\\.\\.)?>".replace("(", "(?:");
+    private static final Pattern queryTokenizer = Pattern.compile(String.format("(%s|%s)", literal, variable));
 
     /**
      * Creates a DispatchMethod object based on module and method
@@ -132,25 +96,34 @@ class DispatchMethod implements Comparable<DispatchMethod> {
 
         String queryFormat = method.getDeclaredAnnotation(SmsQuery.class).value();
 
-        // first check if query format is valid
-        Matcher tokenized = Patterns.queryTokenizer.matcher(queryFormat);
-        if (!tokenized.matches())
+        Matcher tokenizer = queryTokenizer.matcher(queryFormat);
+        ArrayList<String> tokenList = new ArrayList<>();
+        int lastMatchPos = 0;
+        while (tokenizer.find()) {
+            tokenList.add(tokenizer.group(1));
+            lastMatchPos = tokenizer.end();
+        }
+
+        if (lastMatchPos != queryFormat.length())
             throwAnnotationError(method, "invalid query format");
 
         // collect all tokens
-        String[] tokens = new String[tokenized.groupCount()];
+        String[] tokens = new String[tokenList.size()];
         String[] identifiers = new String[tokens.length];
         boolean[] identifierIsArray = new boolean[tokens.length];
-        int idents = 0;
-        int size = 0;
+        int idents = 0, size = 0;
         for (int i = 0; i < tokens.length; ++i) {
-            String token = tokenized.group(i + 1);
-            if (!token.matches("\\s+")) {
+            String token = tokenList.get(i);
+            if (token == null || !token.matches("\\s+")) {
                 tokens[size++] = token;
                 if (token.charAt(0) == '<') {
-                    Matcher matcher = Patterns.nameTokenizer.matcher(token);
-                    identifiers[idents] = matcher.group(1);
-                    identifierIsArray[idents++] = matcher.groupCount() == 2;
+                    if (token.endsWith("...>")) {
+                        identifiers[idents] = token.substring(1, token.length() - 4);
+                        identifierIsArray[idents++] = true;
+                    } else {
+                        identifiers[idents] = token.substring(1, token.length() - 1);
+                        identifierIsArray[idents++] = false;
+                    }
                 }
             }
         }
@@ -161,8 +134,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         this.identifierParams = this.method.getParameters();
 
         // setup pattern here
-        StringBuilder patternBuilder = new StringBuilder("\\s*");
-        int currentIdentifier = 0;
+        StringBuilder patternBuilder = new StringBuilder("^\\s*");
         for (int i = 0; i < tokens.length; ++i) {
             if (tokens[i].charAt(0) != '<') {
                 // split token into spaces
@@ -196,27 +168,28 @@ class DispatchMethod implements Comparable<DispatchMethod> {
                                     patternBuilder.append("(\\S+)\\s+");
                                 else {
                                     if (ch == '\\' || ch == ']')
-                                        patternBuilder.append("([^\\").append(ch).append("])");
+                                        patternBuilder.append("([^\\").append(ch).append("]+)");
                                     else
-                                        patternBuilder.append("([^").append(ch).append("])");
+                                        patternBuilder.append("([^").append(ch).append("]+)");
                                 }
                             }
                         }
                     }
                 }
-                else if (identifierIsArray[currentIdentifier])
+                else if (identifierIsArray[identifierIsArray.length - 1])
                     patternBuilder.append("(.*)");
                 else
                     patternBuilder.append("(\\S+).*");
-                ++currentIdentifier;
             }
+            patternBuilder.append("\\s*");
         }
-        patternBuilder.append("\\s*");
+        patternBuilder.append("\\s*$");
         if (method.isAnnotationPresent(CaseSensitive.class))
             this.pattern = Pattern.compile(patternBuilder.toString());
         else
             this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.CASE_INSENSITIVE);
 
+//        System.out.println(pattern);
     }
 
     /**
@@ -227,6 +200,145 @@ class DispatchMethod implements Comparable<DispatchMethod> {
     public boolean matches(String message) {
         // check if message matches method pattern
         return pattern.matcher(message).matches();
+    }
+
+    /**
+     * Dispatches a message that matches a pattern in one of the modules of this application.
+     * If there exists more than one pattern that matches the message, the method with the higher
+     * priority (class first then method) will be dispatched.
+     *
+     * @param message the message to be processed by this dispatcher
+     * @throws SmsPatternMismatchError when dispatch method for message cannot be found
+     * @return the reply of the dispatcher
+     */
+    public String dispatch(String message) throws SmsPatternMismatchError {
+
+        // run through the pattern, otherwise throw an error if Pattern does not match
+        Matcher matcher = pattern.matcher(message);
+        if (!matcher.matches())
+            throw new SmsPatternMismatchError("message does not match Pattern");
+
+        // dynamically construct arguments
+        Object[] args = new Object[identifierParams.length];
+        Arrays.fill(args, null);
+
+        // iterate order
+        int size = Math.min(args.length, matcher.groupCount());
+        for (int i = 0; i < size; ++i) {
+            if (!identifierIsArray[i]) {
+                args[i] = typeConversion(matcher.group(i + 1).trim(), identifierParams[i]);
+
+            } else {
+                ArrayDelim delim = identifierParams[i].getDeclaredAnnotation(ArrayDelim.class);
+                String delimRegex = delim == null ? "\\s+" : delim.value();
+                args[i] = typeConversion(matcher.group(i + 1).trim().split(delimRegex), identifierParams[i]);
+            }
+        }
+
+        // invoke method
+        try {
+            return (String) method.invoke(module, args);
+        } catch (Exception e) {
+            throw new SmsPatternMismatchError(e.getMessage());
+        }
+
+    }
+
+    private Object typeConversion(String arg, Parameter param) {
+        return typeConversion(arg, param.getType());
+    }
+
+    private Object typeConversion(String arg, Class<?> type) {
+        if (type.equals(String.class))      return arg;
+        if (type.equals(int.class))         return (int) Integer.parseInt(arg);
+        if (type.equals(Integer.class))     return Integer.parseInt(arg);
+        if (type.equals(long.class))        return (long) Long.parseLong(arg);
+        if (type.equals(Long.class))        return Long.parseLong(arg);
+        if (type.equals(boolean.class))     return (boolean) Boolean.parseBoolean(arg);
+        if (type.equals(Boolean.class))     return Boolean.parseBoolean(arg);
+        if (type.equals(short.class))       return (short) Short.parseShort(arg);
+        if (type.equals(Short.class))       return Short.parseShort(arg);
+        if (type.equals(byte.class))        return (short) Byte.parseByte(arg);
+        if (type.equals(Byte.class))        return Byte.parseByte(arg);
+        if (type.equals(char.class))        return arg.charAt(0);
+        if (type.equals(Character.class))   return (Character) arg.charAt(0);
+        return arg;
+    }
+
+    private Object typeConversion(String[] arg, Parameter param) {
+        Class<?> type = param.getType();
+        if (type.equals(String[].class))
+            return arg;
+        if (type.equals(int[].class)) {
+            int[] ans = new int[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = (int) Integer.parseInt(arg[i]);
+            return ans;
+        }
+        if (type.equals(Integer[].class)) {
+            Integer[] ans = new Integer[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = Integer.parseInt(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(long[].class)){
+            long[] ans = new long[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = (long) Long.parseLong(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(Long[].class)) {
+            Long[] ans = new Long[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = Long.parseLong(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(Boolean[].class)) {
+            Boolean[] ans = new Boolean[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = Boolean.parseBoolean(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(boolean[].class))         {
+            boolean[] ans = new boolean[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = (boolean) Boolean.parseBoolean(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(Short[].class)) {
+            Short[] ans = new Short[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = Short.parseShort(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(short[].class))         {
+            short[] ans = new short[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = (short) Short.parseShort(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(Byte[].class))         {
+            short[] ans = new short[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = (byte) Byte.parseByte(arg[i]);
+            return ans;
+        }
+
+        if (type.equals(byte[].class))         {
+            short[] ans = new short[arg.length];
+            for (int i = 0; i < arg.length; ++i)
+                ans[i] = (byte) Byte.parseByte(arg[i]);
+            return ans;
+        }
+
+        return arg;
     }
 
     /**

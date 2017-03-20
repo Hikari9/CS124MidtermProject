@@ -1,8 +1,13 @@
 package me.ricotiongson.elegantsms.framework;
 
+import org.objenesis.Objenesis;
+import org.objenesis.ObjenesisStd;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 
@@ -12,7 +17,8 @@ import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 public class SmsApplication {
 
     // collection of dispatchers for application
-    private TreeSet<DispatchMethod> dispatchers = new TreeSet<>();
+    private static Objenesis objenesis = new ObjenesisStd();
+    private Set<DispatchMethod> dispatchers = new TreeSet<>();
 
     /**
      * Creates an SMS Application from specific modules.
@@ -39,20 +45,14 @@ public class SmsApplication {
      * @param packageName
      * @return
      */
-    public static SmsApplication loadModulesInPackage(String packageName) {
+    public static SmsApplication fromPackage(String packageName) {
         SmsApplication app = new SmsApplication();
         // perform a scan on the package, and process via callback
         new FastClasspathScanner(packageName)
-            .matchSubclassesOf(SmsModule.class, module -> {
-                SmsModule instance = null;
-                // try instantiating the module with its default constructor
-                try {
-                    instance = module.newInstance();
-                } catch (InstantiationException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-                if (instance != null)
-                    app.addModule(instance);
+            // .verbose()
+            .matchClassesImplementing(SmsModule.class, module -> {
+                SmsModule instance = objenesis.newInstance(module);
+                app.addModule(instance);
             })
             .scan();
         return app;
@@ -65,6 +65,15 @@ public class SmsApplication {
             }
         }
         throw new SmsPatternMismatchError("no pattern found");
+    }
+
+    public String dispatchNoThrow(String message) {
+        for (DispatchMethod method : dispatchers) {
+            if (method.matches(message)) {
+                return method.dispatch(message);
+            }
+        }
+        return null;
     }
 
     public String[] dispatchAll(String message) {
