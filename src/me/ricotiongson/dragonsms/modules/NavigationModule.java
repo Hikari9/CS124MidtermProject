@@ -8,7 +8,7 @@ import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.framework.SmsModule;
 import me.ricotiongson.elegantsms.framework.Priority;
 
-public class NavigationModule implements SmsModule {
+public class NavigationModule /*implements SmsModule*/ {
 
     @SmsQuery("REGISTER <NAME>/<AGE>")
     public String register(String name, int age) {

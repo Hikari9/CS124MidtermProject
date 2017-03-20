@@ -176,14 +176,16 @@ class DispatchMethod implements Comparable<DispatchMethod> {
                         }
                     }
                 }
-                else if (identifierIsArray[identifierIsArray.length - 1])
+                else if (identifierIsArray[identifierIsArray.length - 1]
+                    || (Character.isWhitespace(queryFormat.charAt(queryFormat.length() - 1))
+                    && queryFormat.charAt(queryFormat.length() - 1) != ' '))
                     patternBuilder.append("(.*)");
                 else
-                    patternBuilder.append("(\\S+).*");
+                    patternBuilder.append("(\\S+)");
             }
             patternBuilder.append("\\s*");
         }
-        patternBuilder.append("\\s*$");
+        patternBuilder.append("$");
         if (method.isAnnotationPresent(CaseSensitive.class))
             this.pattern = Pattern.compile(patternBuilder.toString());
         else
