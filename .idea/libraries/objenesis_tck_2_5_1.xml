@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="objenesis-tck-2.5.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/DragonSMS/lib/objenesis-tck-2.5.1.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

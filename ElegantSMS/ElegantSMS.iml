@@ -25,5 +25,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="objenesis-tck-2.5.1" level="project" />
+    <orderEntry type="library" name="fast-classpath-scanner-2.0.17" level="project" />
   </component>
 </module>

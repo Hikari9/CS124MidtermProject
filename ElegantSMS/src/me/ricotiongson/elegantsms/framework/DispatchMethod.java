@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 import me.ricotiongson.elegantsms.annotations.ArrayDelim;
 import me.ricotiongson.elegantsms.annotations.CaseSensitive;
