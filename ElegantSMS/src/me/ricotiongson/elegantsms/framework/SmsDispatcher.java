@@ -1,5 +1,5 @@
 package me.ricotiongson.elegantsms.framework;
 
-public class SMSDispatcher {
+public class SmsDispatcher {
 
 }

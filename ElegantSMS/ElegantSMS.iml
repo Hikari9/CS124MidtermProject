@@ -7,6 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="objenesis-tck-2.5.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="Fast Classpath Scanner">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/fast-classpath-scanner-2.0.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

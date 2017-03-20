@@ -1,15 +1,16 @@
-package me.ricotiongson.elegantsms.test.services;
+package me.ricotiongson.dragonsms.modules;
 
 import me.ricotiongson.elegantsms.annotations.BindByOrder;
-import me.ricotiongson.elegantsms.annotations.ArrayDelim;
 import me.ricotiongson.elegantsms.annotations.CaseSensitive;
-import me.ricotiongson.elegantsms.annotations.SMSQuery;
-import me.ricotiongson.elegantsms.framework.SMSService;
+import me.ricotiongson.elegantsms.annotations.DispatchPriority;
+import me.ricotiongson.elegantsms.annotations.SmsQuery;
+import me.ricotiongson.elegantsms.framework.SmsModule;
+import me.ricotiongson.elegantsms.dispatch.Priority;
 
 @BindByOrder
-public class NavigationService implements SMSService {
+public class NavigationModule implements SmsModule {
 
-    @SMSQuery("REGISTER <NAME>")
+    @SmsQuery("REGISTER <NAME>")
     public String register(String name) {
         /* TODO
             - Store name in session
@@ -17,7 +18,7 @@ public class NavigationService implements SMSService {
         return "Hello, " + name + ", welcome to DragonSMS";
     }
 
-    @SMSQuery("START")
+    @SmsQuery("START")
     public String start() {
         /* TODO
             - Starts new session with name
@@ -26,7 +27,7 @@ public class NavigationService implements SMSService {
         return "<Room1 intro>";
     }
 
-    @SMSQuery("GO <ROOM#>")
+    @SmsQuery("GO <ROOM#>")
     public String go(String roomNumber) {
         /* TODO
             - Set Room in session to supplied room
@@ -36,8 +37,9 @@ public class NavigationService implements SMSService {
         return "<Room# intro>";
     }
 
+    @DispatchPriority(Priority.LOWEST)
     @CaseSensitive
-    @SMSQuery("<COMMAND> <PARAMS...>")
+    @SmsQuery("<COMMAND> <PARAMS...>")
     public String command(String command, String... params) {
         /* TODO
             - Invoke the supplied command (with the params as needed) with current room and session
@@ -46,7 +48,7 @@ public class NavigationService implements SMSService {
         return "<Reply based on room and gameState>";
     }
 
-    @SMSQuery("HINT")
+    @SmsQuery("HINT")
     public String command() {
         return "<Reply based on room and gameState>";
     }

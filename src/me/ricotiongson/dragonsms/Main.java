@@ -1,4 +1,4 @@
-package me.ricotiongson.cs124.midtermproject;
+package me.ricotiongson.dragonsms;
 
 public class Main {
 
