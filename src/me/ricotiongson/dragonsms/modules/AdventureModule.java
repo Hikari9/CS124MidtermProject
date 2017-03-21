@@ -11,7 +11,7 @@ import me.ricotiongson.elegantsms.framework.SmsModule;
 public class AdventureModule extends SessionManager implements SmsModule {
 
     @SmsQuery("GO <ROOM#>")
-    String go(String roomName) {
+    public String go(String roomName) {
         return checkRoom(this.capitalize(roomName));
     }
 
@@ -22,7 +22,7 @@ public class AdventureModule extends SessionManager implements SmsModule {
 
     @DispatchPriority(Priority.LOWEST + 1)
     @SmsQuery("<COMMAND> <PARAMS...>")
-    String command(String command, String... params) {
+    public String command(String command, String... params) {
         return processRoom(command, params);
     }
 
@@ -32,7 +32,7 @@ public class AdventureModule extends SessionManager implements SmsModule {
 //        return "";
 //    }
 
-    public String capitalize(String text) {
+    private String capitalize(String text) {
         if (text == null || text.length() == 0)
             return "";
         return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();

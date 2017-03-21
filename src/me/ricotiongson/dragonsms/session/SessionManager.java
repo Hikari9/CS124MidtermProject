@@ -30,11 +30,11 @@ public class SessionManager {
      * Gets the current session
      * @return
      */
-    protected Session getSession() {
+    public Session getSession() {
         return session;
     }
 
-    protected String processRoom(String methodName, String... params) {
+    public String processRoom(String methodName, String... params) {
         Object room = getSession().getRoom();
         if (methodName == null)
             return "method not found";
@@ -75,7 +75,7 @@ public class SessionManager {
      * Processes a room with command via the room command manager
      * @return
      */
-    protected String checkRoom(String roomName) {
+    public String checkRoom(String roomName) {
         Object room;
         try {
             Constructor constructor = Class.forName("room." + roomName).getDeclaredConstructor();

@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a698c96b-6388-4cb2-9838-664c264f60d1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ElegantSMS/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/session/SessionModule.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionModule.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ElegantSMS/me/ricotiongson/elegantsms/framework/DispatchMethod.class" afterPath="$PROJECT_DIR$/out/production/ElegantSMS/me/ricotiongson/elegantsms/framework/DispatchMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ElegantSMS/me/ricotiongson/elegantsms/framework/SmsApplication.class" afterPath="$PROJECT_DIR$/out/production/ElegantSMS/me/ricotiongson/elegantsms/framework/SmsApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/Main.class" afterPath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/modules/AdventureModule.class" afterPath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/modules/AdventureModule.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/modules/StarterModule.class" afterPath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/modules/StarterModule.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/session/Session.class" afterPath="$PROJECT_DIR$/out/production/MidtermProject/me/ricotiongson/dragonsms/session/Session.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diagrams/DragonSMS UML - light.png" afterPath="$PROJECT_DIR$/diagrams/DragonSMS UML - light.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/TypeConverter.java" afterPath="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/TypeConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureModule.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureModule.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +38,7 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
+                <state relative-caret-position="-8">
                   <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -60,24 +47,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DispatchMethod.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="282" column="19" lean-forward="true" selection-start-line="282" selection-start-column="19" selection-end-line="282" selection-end-column="28" />
-                  <folding>
-                    <element signature="docComment;method#throwAnnotationError#0;class#DispatchMethod#0" expanded="false" />
-                    <element signature="docComment;method#throwAnnotationError#1;class#DispatchMethod#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="TypeConverter.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/TypeConverter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-102">
-                  <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+                <state relative-caret-position="-8">
+                  <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -86,7 +60,7 @@
           <file leaf-file-name="Room4.java" pinned="false" current-in-tab="false">
             <entry file="jar://$PROJECT_DIR$/lib/RoomCommandManager.jar!/room/Room4.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-187">
+                <state relative-caret-position="-8">
                   <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
                   <folding />
                 </state>
@@ -96,25 +70,27 @@
           <file leaf-file-name="StarterModule.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                <state relative-caret-position="360">
+                  <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#666#667#0" expanded="true" />
+                    <element signature="e#691#692#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AdventureModule.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AdventureModule.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureModule.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="32" selection-end-column="7" />
+                <state relative-caret-position="420">
+                  <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
                   <folding>
-                    <element signature="e#492#493#0" expanded="true" />
-                    <element signature="e#551#552#0" expanded="true" />
-                    <element signature="e#813#814#0" expanded="true" />
-                    <element signature="e#864#865#0" expanded="true" />
+                    <element signature="e#499#500#0" expanded="true" />
+                    <element signature="e#558#559#0" expanded="true" />
+                    <element signature="e#827#828#0" expanded="true" />
+                    <element signature="e#878#879#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -123,10 +99,12 @@
           <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+                <state relative-caret-position="360">
+                  <caret line="26" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#481#482#0" expanded="true" />
+                    <element signature="e#513#514#0" expanded="true" />
                     <element signature="e#777#778#0" expanded="true" />
                     <element signature="e#809#810#0" expanded="true" />
                   </folding>
@@ -134,28 +112,97 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SessionManager.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
-                  <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#578#579#0" expanded="true" />
-                    <element signature="e#636#637#0" expanded="true" />
-                    <element signature="e#737#738#0" expanded="true" />
-                    <element signature="e#767#768#0" expanded="true" />
-                  </folding>
+          <file leaf-file-name="JAVA/me.ricotiongson.dragonsms.modules.AdventureModule" pinned="false" current-in-tab="true">
+            <entry file="uml://JAVA/me.ricotiongson.dragonsms.modules.AdventureModule">
+              <provider selected="true" editor-type-id="UmlEditorProvider">
+                <state>
+                  <ID>JAVA</ID>
+                  <OriginalElement>me.ricotiongson.dragonsms.modules.AdventureModule</OriginalElement>
+                  <nodes>
+                    <node x="315.58333333333337" y="23.5">room.Room1</node>
+                    <node x="316.0" y="509.5">me.ricotiongson.dragonsms.modules.AdventureModule</node>
+                    <node x="0.0" y="475.0">me.ricotiongson.elegantsms.framework.SmsApplication</node>
+                    <node x="514.3101851851852" y="151.0">me.ricotiongson.dragonsms.session.Session</node>
+                    <node x="68.5" y="671.0">me.ricotiongson.dragonsms.Main</node>
+                    <node x="566.5833333333334" y="0.0">room.GameState</node>
+                    <node x="298.4259259259259" y="347.5">me.ricotiongson.elegantsms.framework.SmsModule</node>
+                    <node x="469.3101851851852" y="301.0">me.ricotiongson.dragonsms.session.SessionManager</node>
+                    <node x="504.0" y="498.0">me.ricotiongson.dragonsms.modules.StarterModule</node>
+                  </nodes>
+                  <notes />
+                  <edges>
+                    <edge source="me.ricotiongson.dragonsms.Main" target="me.ricotiongson.elegantsms.framework.SmsApplication">
+                      <point x="0.0" y="0.0" />
+                      <point x="0.0" y="0.0" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.modules.AdventureModule" target="me.ricotiongson.dragonsms.session.SessionManager">
+                      <point x="42.0" y="-38.5" />
+                      <point x="442.0" y="455.0" />
+                      <point x="532.8101851851852" y="455.0" />
+                      <point x="-63.5" y="62.0" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.modules.StarterModule" target="me.ricotiongson.dragonsms.session.SessionManager">
+                      <point x="54.75" y="-50.0" />
+                      <point x="668.25" y="455.0" />
+                      <point x="659.8101851851852" y="455.0" />
+                      <point x="63.5" y="62.0" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.session.SessionManager" target="me.ricotiongson.dragonsms.session.Session">
+                      <point x="0.0" y="0.0" />
+                      <point x="0.0" y="0.0" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.modules.StarterModule" target="me.ricotiongson.elegantsms.framework.SmsModule">
+                      <point x="-54.75" y="-50.0" />
+                      <point x="558.75" y="445.0" />
+                      <point x="380.9259259259259" y="445.0" />
+                      <point x="33.0" y="15.5" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.modules.AdventureModule" target="me.ricotiongson.elegantsms.framework.SmsModule">
+                      <point x="-42.0" y="-38.5" />
+                      <point x="358.0" y="455.0" />
+                      <point x="347.9259259259259" y="455.0" />
+                      <point x="0.0" y="15.5" />
+                    </edge>
+                    <edge source="me.ricotiongson.elegantsms.framework.SmsApplication" target="me.ricotiongson.elegantsms.framework.SmsModule">
+                      <point x="0.0" y="-73.0" />
+                      <point x="148.0" y="455.0" />
+                      <point x="314.9259259259259" y="455.0" />
+                      <point x="-33.0" y="15.5" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.session.Session" target="room.Room1">
+                      <point x="0.0" y="0.0" />
+                      <point x="0.0" y="0.0" />
+                    </edge>
+                    <edge source="me.ricotiongson.dragonsms.session.Session" target="room.GameState">
+                      <point x="0.0" y="0.0" />
+                      <point x="0.0" y="0.0" />
+                    </edge>
+                  </edges>
+                  <settings layout="Hierarchic Group" zoom="0.95260663507109" x="371.5" y="412.0" />
+                  <SelectedNodes />
+                  <Categories>
+                    <Category>Properties</Category>
+                    <Category>Methods</Category>
+                    <Category>Inner Classes</Category>
+                  </Categories>
+                  <SCOPE>All</SCOPE>
+                  <VISIBILITY>protected</VISIBILITY>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SmsModule.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsModule.java">
+          <file leaf-file-name="SessionManager.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-                  <folding />
+                <state relative-caret-position="263">
+                  <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#578#579#0" expanded="true" />
+                    <element signature="e#636#637#0" expanded="true" />
+                    <element signature="e#734#735#0" expanded="true" />
+                    <element signature="e#764#765#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -163,7 +210,7 @@
           <file leaf-file-name="SmsApplication.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="258">
+                <state relative-caret-position="-18">
                   <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -179,7 +226,7 @@
           <file leaf-file-name="RoomCommandManager.java" pinned="false" current-in-tab="true">
             <entry file="jar://$PROJECT_DIR$/lib/RoomCommandManager.jar!/room/RoomCommandManager.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="269">
+                <state relative-caret-position="197">
                   <caret line="55" column="17" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="55" selection-end-column="17" />
                   <folding />
                 </state>
@@ -271,15 +318,15 @@
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterSessionManager.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureSessionManager.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Room.java" />
-        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java" />
-        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsPatternMismatchError.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java" />
-        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" />
         <option value="$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/TypeConverter.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureModule.java" />
+        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java" />
+        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" />
+        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java" />
       </list>
     </option>
   </component>
@@ -399,6 +446,32 @@
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RoomCommandManager.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MidtermProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MidtermProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RoomCommandManager.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="room" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -485,6 +558,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="elegantsms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="annotations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -881,12 +958,12 @@
       <workItem from="1489996391088" duration="986000" />
       <workItem from="1489997457855" duration="34691000" />
       <workItem from="1490042078167" duration="2055000" />
-      <workItem from="1490044488131" duration="10626000" />
+      <workItem from="1490044488131" duration="11570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48569000" />
+    <option name="totallyTimeSpent" value="49513000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -930,6 +1007,36 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31256655" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="580" y="166" width="760" height="754" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4259851" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2488372" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15228967" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -956,7 +1063,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DragonSMS/src/me/ricotiongson/dragonsms/handlers/DragonSMS.java" />
     <entry file="file://$PROJECT_DIR$/DragonSMS/src/me/ricotiongson/dragonsms/annotations/Dispatch.java" />
     <entry file="file://$PROJECT_DIR$/DragonSMS/src/me/ricotiongson/dragonsms/annotations/AutoBind.java" />
     <entry file="uml://JAVA/me.ricotiongson.dragonsms.annotations.DispatchPriority">
@@ -1642,75 +1748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/me.ricotiongson.dragonsms.session.SessionManager">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>me.ricotiongson.dragonsms.session.SessionManager</OriginalElement>
-          <nodes>
-            <node x="348.0" y="370.5">me.ricotiongson.dragonsms.modules.AdventureModule</node>
-            <node x="0.0" y="347.0">me.ricotiongson.elegantsms.framework.SmsApplication</node>
-            <node x="359.92857142857144" y="220.0">me.ricotiongson.elegantsms.framework.SmsModule</node>
-            <node x="605.25" y="0.0">me.ricotiongson.dragonsms.session.Session</node>
-            <node x="49.0" y="567.0">me.ricotiongson.dragonsms.Main</node>
-            <node x="577.9285714285714" y="174.0">me.ricotiongson.dragonsms.session.SessionManager</node>
-            <node x="621.0" y="393.5">me.ricotiongson.dragonsms.modules.StarterModule</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="me.ricotiongson.dragonsms.Main" target="me.ricotiongson.elegantsms.framework.SmsApplication">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="me.ricotiongson.elegantsms.framework.SmsApplication" target="me.ricotiongson.elegantsms.framework.SmsModule">
-              <point x="0.0" y="-85.0" />
-              <point x="164.0" y="327.0" />
-              <point x="376.42857142857144" y="327.0" />
-              <point x="-33.0" y="15.5" />
-            </edge>
-            <edge source="me.ricotiongson.dragonsms.modules.AdventureModule" target="me.ricotiongson.dragonsms.session.SessionManager">
-              <point x="63.25" y="-61.5" />
-              <point x="537.75" y="327.0" />
-              <point x="641.4285714285714" y="327.0" />
-              <point x="-63.5" y="61.5" />
-            </edge>
-            <edge source="me.ricotiongson.dragonsms.modules.StarterModule" target="me.ricotiongson.dragonsms.session.SessionManager">
-              <point x="49.75" y="-38.5" />
-              <point x="770.25" y="327.0" />
-              <point x="768.4285714285714" y="327.0" />
-              <point x="63.5" y="61.5" />
-            </edge>
-            <edge source="me.ricotiongson.dragonsms.session.SessionManager" target="me.ricotiongson.dragonsms.session.Session">
-              <point x="0.0" y="0.0" />
-              <point x="0.0" y="0.0" />
-            </edge>
-            <edge source="me.ricotiongson.dragonsms.modules.StarterModule" target="me.ricotiongson.elegantsms.framework.SmsModule">
-              <point x="-49.75" y="-38.5" />
-              <point x="670.75" y="317.0" />
-              <point x="442.42857142857144" y="317.0" />
-              <point x="33.0" y="15.5" />
-            </edge>
-            <edge source="me.ricotiongson.dragonsms.modules.AdventureModule" target="me.ricotiongson.elegantsms.framework.SmsModule">
-              <point x="-63.25" y="-61.5" />
-              <point x="411.25" y="327.0" />
-              <point x="409.42857142857144" y="327.0" />
-              <point x="0.0" y="15.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.8544600938967136" x="270.8791208791209" y="132.9065934065934" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>protected</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/RoomCommandManager.jar!/room/Room1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1721,7 +1758,7 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/RoomCommandManager.jar!/room/RoomCommandManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
+        <state relative-caret-position="197">
           <caret line="55" column="17" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="55" selection-end-column="17" />
           <folding />
         </state>
@@ -1745,7 +1782,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="-8">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
           <folding />
         </state>
@@ -1753,8 +1790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/DispatchMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="282" column="19" lean-forward="true" selection-start-line="282" selection-start-column="19" selection-end-line="282" selection-end-column="28" />
+        <state relative-caret-position="-18">
+          <caret line="282" column="19" lean-forward="false" selection-start-line="282" selection-start-column="19" selection-end-line="282" selection-end-column="28" />
           <folding>
             <element signature="docComment;method#throwAnnotationError#0;class#DispatchMethod#0" expanded="false" />
             <element signature="docComment;method#throwAnnotationError#1;class#DispatchMethod#0" expanded="false" />
@@ -1762,19 +1799,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="-8">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1782,68 +1809,195 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java">
+    <entry file="jar://$PROJECT_DIR$/lib/RoomCommandManager.jar!/room/Room4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-8">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/RoomCommandManager.jar!/room/Room4.java">
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/TypeConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="-8">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+        <state relative-caret-position="263">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#578#579#0" expanded="true" />
             <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/util/TypeConverter.java">
+    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/Session.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java">
+    <entry file="file://$PROJECT_DIR$/ElegantSMS/src/me/ricotiongson/elegantsms/framework/SmsApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="-18">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/me.ricotiongson.dragonsms.session.SessionManager">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>me.ricotiongson.dragonsms.session.SessionManager</OriginalElement>
+          <nodes>
+            <node x="" y="">room.Room1</node>
+            <node x="" y="">me.ricotiongson.dragonsms.modules.AdventureModule</node>
+            <node x="" y="">me.ricotiongson.elegantsms.framework.SmsApplication</node>
+            <node x="" y="">me.ricotiongson.dragonsms.session.Session</node>
+            <node x="" y="">me.ricotiongson.dragonsms.Main</node>
+            <node x="" y="">me.ricotiongson.elegantsms.framework.SmsPatternMismatchException</node>
+            <node x="" y="">room.GameState</node>
+            <node x="" y="">me.ricotiongson.elegantsms.framework.SmsModule</node>
+            <node x="" y="">me.ricotiongson.dragonsms.session.SessionManager</node>
+            <node x="" y="">me.ricotiongson.dragonsms.modules.StarterModule</node>
+            <node x="" y="">me.ricotiongson.elegantsms.framework.Priority</node>
+            <node x="" y="">me.ricotiongson.elegantsms.framework.DispatchMethod</node>
+            <node x="" y="">me.ricotiongson.elegantsms.util.TypeConverter</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.5508870214752568" x="651.4550847457629" y="719.7322033898305" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>protected</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="32" selection-end-column="7" />
+        <state relative-caret-position="420">
+          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
           <folding>
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#878#879#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/StarterModule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/me.ricotiongson.dragonsms.modules.AdventureModule">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>me.ricotiongson.dragonsms.modules.AdventureModule</OriginalElement>
+          <nodes>
+            <node x="315.58333333333337" y="23.5">room.Room1</node>
+            <node x="316.0" y="509.5">me.ricotiongson.dragonsms.modules.AdventureModule</node>
+            <node x="0.0" y="475.0">me.ricotiongson.elegantsms.framework.SmsApplication</node>
+            <node x="514.3101851851852" y="151.0">me.ricotiongson.dragonsms.session.Session</node>
+            <node x="68.5" y="671.0">me.ricotiongson.dragonsms.Main</node>
+            <node x="566.5833333333334" y="0.0">room.GameState</node>
+            <node x="298.4259259259259" y="347.5">me.ricotiongson.elegantsms.framework.SmsModule</node>
+            <node x="469.3101851851852" y="301.0">me.ricotiongson.dragonsms.session.SessionManager</node>
+            <node x="504.0" y="498.0">me.ricotiongson.dragonsms.modules.StarterModule</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="me.ricotiongson.dragonsms.Main" target="me.ricotiongson.elegantsms.framework.SmsApplication">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.modules.AdventureModule" target="me.ricotiongson.dragonsms.session.SessionManager">
+              <point x="42.0" y="-38.5" />
+              <point x="442.0" y="455.0" />
+              <point x="532.8101851851852" y="455.0" />
+              <point x="-63.5" y="62.0" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.modules.StarterModule" target="me.ricotiongson.dragonsms.session.SessionManager">
+              <point x="54.75" y="-50.0" />
+              <point x="668.25" y="455.0" />
+              <point x="659.8101851851852" y="455.0" />
+              <point x="63.5" y="62.0" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.session.SessionManager" target="me.ricotiongson.dragonsms.session.Session">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.modules.StarterModule" target="me.ricotiongson.elegantsms.framework.SmsModule">
+              <point x="-54.75" y="-50.0" />
+              <point x="558.75" y="445.0" />
+              <point x="380.9259259259259" y="445.0" />
+              <point x="33.0" y="15.5" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.modules.AdventureModule" target="me.ricotiongson.elegantsms.framework.SmsModule">
+              <point x="-42.0" y="-38.5" />
+              <point x="358.0" y="455.0" />
+              <point x="347.9259259259259" y="455.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="me.ricotiongson.elegantsms.framework.SmsApplication" target="me.ricotiongson.elegantsms.framework.SmsModule">
+              <point x="0.0" y="-73.0" />
+              <point x="148.0" y="455.0" />
+              <point x="314.9259259259259" y="455.0" />
+              <point x="-33.0" y="15.5" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.session.Session" target="room.Room1">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="me.ricotiongson.dragonsms.session.Session" target="room.GameState">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.95260663507109" x="371.5" y="412.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>protected</VISIBILITY>
         </state>
       </provider>
     </entry>

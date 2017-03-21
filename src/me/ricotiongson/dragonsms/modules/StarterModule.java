@@ -20,4 +20,9 @@ public class StarterModule extends SessionManager implements SmsModule {
         return checkRoom("Room1");
     }
 
+    @SmsQuery("HINT")
+    public String hint() {
+        return "";
+    }
+
 }
