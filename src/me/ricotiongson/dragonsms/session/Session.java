@@ -9,10 +9,12 @@ import room.RoomCommandManager;
 public class Session {
     private String name;
     private GameState gameState;
+    private Object room;
 
     public Session(String name) {
         this.name = name;
-        gameState = new GameState();
+        gameState = new GameState(0);
+        room = new Room1();
     }
 
     public String getName() {
@@ -29,5 +31,13 @@ public class Session {
 
     public void setGameState(GameState gameState) {
         this.gameState = gameState;
+    }
+
+    public Object getRoom() {
+        return room;
+    }
+
+    public void setRoom(Object room) {
+        this.room = room;
     }
 }

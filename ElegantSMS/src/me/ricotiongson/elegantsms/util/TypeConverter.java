@@ -11,16 +11,16 @@ public class TypeConverter {
     public static Object convertType(String arg, Class<?> type) {
         if (type.equals(String.class))      return arg;
         if (type.equals(int.class))         return (int) Integer.parseInt(arg);
-        if (type.equals(Integer.class))     return Integer.parseInt(arg);
+        if (type.equals(Integer.class))     return (Integer) Integer.parseInt(arg);
         if (type.equals(long.class))        return (long) Long.parseLong(arg);
-        if (type.equals(Long.class))        return Long.parseLong(arg);
+        if (type.equals(Long.class))        return (Long) Long.parseLong(arg);
         if (type.equals(boolean.class))     return (boolean) Boolean.parseBoolean(arg);
-        if (type.equals(Boolean.class))     return Boolean.parseBoolean(arg);
+        if (type.equals(Boolean.class))     return (Boolean) Boolean.parseBoolean(arg);
         if (type.equals(short.class))       return (short) Short.parseShort(arg);
-        if (type.equals(Short.class))       return Short.parseShort(arg);
-        if (type.equals(byte.class))        return (short) Byte.parseByte(arg);
-        if (type.equals(Byte.class))        return Byte.parseByte(arg);
-        if (type.equals(char.class))        return arg.charAt(0);
+        if (type.equals(Short.class))       return (Short) Short.parseShort(arg);
+        if (type.equals(byte.class))        return (byte) Byte.parseByte(arg);
+        if (type.equals(Byte.class))        return (Byte) Byte.parseByte(arg);
+        if (type.equals(char.class))        return (char) arg.charAt(0);
         if (type.equals(Character.class))   return (Character) arg.charAt(0);
         return arg;
     }

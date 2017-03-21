@@ -1,12 +1,10 @@
 package me.ricotiongson.dragonsms.modules;
 
-import me.ricotiongson.dragonsms.session.Session;
-import me.ricotiongson.dragonsms.session.SessionModule;
+import me.ricotiongson.dragonsms.session.SessionManager;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.framework.SmsModule;
-import room.Room1;
 
-public class StarterModule extends SessionModule implements SmsModule {
+public class StarterModule extends SessionManager implements SmsModule {
 
     private String sessionId;
 
@@ -19,7 +17,7 @@ public class StarterModule extends SessionModule implements SmsModule {
     @SmsQuery("START")
     public String start() {
         startSession(sessionId);
-        return processRoom("Room1", "checkRoom");
+        return checkRoom("Room1");
     }
 
 }

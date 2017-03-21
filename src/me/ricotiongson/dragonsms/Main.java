@@ -3,15 +3,15 @@ package me.ricotiongson.dragonsms;
 import java.util.Scanner;
 
 import me.ricotiongson.elegantsms.framework.SmsApplication;
-import me.ricotiongson.elegantsms.framework.SmsPatternMismatchError;
+import me.ricotiongson.elegantsms.framework.SmsPatternMismatchException;
 
 public class Main {
 
+    // load application from package
+    static SmsApplication dragonSMS = SmsApplication.fromPackage("me.ricotiongson.dragonsms.modules");
 
     public static void main(String[] args) {
 
-        // load application from package
-        SmsApplication dragonSMS = SmsApplication.fromPackage("me.ricotiongson.dragonsms.modules");
         // scan messages from console
         Scanner sc = new Scanner(System.in);
         while (sc.hasNextLine()) {
@@ -19,8 +19,8 @@ public class Main {
             try {
                 String reply = dragonSMS.dispatch(input);
                 System.out.println(reply);
-            } catch (SmsPatternMismatchError e) {
-                System.err.println(e.getMessage());
+            } catch (SmsPatternMismatchException e) {
+                e.printStackTrace();
             }
         }
 

@@ -135,6 +135,8 @@ class DispatchMethod implements Comparable<DispatchMethod> {
 
         // setup pattern here
         StringBuilder patternBuilder = new StringBuilder("^\\s*");
+        int index = 0;
+        boolean emitArray = false;
         for (int i = 0; i < tokens.length; ++i) {
             if (tokens[i].charAt(0) != '<') {
                 // split token into spaces
@@ -150,40 +152,75 @@ class DispatchMethod implements Comparable<DispatchMethod> {
                 if (i + 1 < tokens.length
                     && Character.isLetterOrDigit(last.charAt(last.length() - 1))
                     && Character.isWhitespace(tokens[i].charAt(tokens[i].length() - 1))) {
-                    // guaranteed to have a variable next, delimit it with whitespace
-                    patternBuilder.append("\\s+");
+                    if (identifierIsArray[index]) {
+                        patternBuilder.append("(\\s*|\\s+");
+                        emitArray = true;
+                    }
+                    else
+                        patternBuilder.append("\\s+");
                 }
             } else {
                 // get next non-space token
                 if (i + 1 < tokens.length) {
                     String next = tokens[i + 1];
-                    if (next.charAt(0) == '<')
-                        patternBuilder.append("(\\S+)\\s+"); // everything that is not whitespace
-                    else {
+                    if (next.charAt(0) == '<') {
+                        if (emitArray) {
+                            patternBuilder.append("\\S*)");
+                            emitArray = false;
+                        }
+                        else
+                            patternBuilder.append("(\\S+)");
+                        if (identifierIsArray[index + 1]) {
+                            patternBuilder.append("(\\s*|\\s+");
+                            emitArray = true;
+                        }
+                        else
+                            patternBuilder.append("\\s+");
+                    } else {
                         // get first non-space character
                         for (int j = 0; j < next.length(); ++j) {
                             char ch = next.charAt(j);
                             if (ch != ' ') {
-                                if (Character.isLetterOrDigit(ch))
-                                    patternBuilder.append("(\\S+)\\s+");
+                                if (Character.isLetterOrDigit(ch)) {
+                                    if (emitArray) {
+                                        patternBuilder.append("\\S*)\\s+");
+                                        emitArray = false;
+                                    } else
+                                        patternBuilder.append("(\\S+)\\s+");
+                                }
                                 else {
+                                    if (!emitArray)
+                                        patternBuilder.append("(");
                                     if (ch == '\\' || ch == ']')
-                                        patternBuilder.append("([^\\").append(ch).append("]+)");
+                                        patternBuilder.append("[^\\").append(ch)
+                                            .append("]");
                                     else
-                                        patternBuilder.append("([^").append(ch).append("]+)");
+                                        patternBuilder.append("[^").append(ch).append("]");
+                                    if (emitArray) {
+                                        patternBuilder.append("*)");
+                                        emitArray = false;
+                                    }
+                                    else
+                                        patternBuilder.append("+)");
                                 }
                             }
                         }
                     }
                 }
-                else if (identifierIsArray[identifierIsArray.length - 1]
-                    || (Character.isWhitespace(queryFormat.charAt(queryFormat.length() - 1))
-                    && queryFormat.charAt(queryFormat.length() - 1) != ' '))
-                    patternBuilder.append("(.*)");
-                else
-                    patternBuilder.append("(\\S+)");
+                else {
+                    if (!emitArray)
+                        patternBuilder.append("(");
+                    if (identifierIsArray[index]
+                        || (Character.isWhitespace(queryFormat.charAt(queryFormat.length() - 1))
+                        && queryFormat.charAt(queryFormat.length() - 1) != ' '))
+                        patternBuilder.append(".*)");
+                    else
+                        patternBuilder.append("\\S+)");
+                }
             }
-            patternBuilder.append("\\s*");
+            if (!emitArray)
+                patternBuilder.append("\\s*");
+            ++index;
         }
         patternBuilder.append("$");
         if (method.isAnnotationPresent(CaseSensitive.class))
@@ -191,7 +228,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         else
             this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.CASE_INSENSITIVE);
 
-//        System.out.println(pattern);
+        System.out.println(pattern);
     }
 
     /**
@@ -210,15 +247,15 @@ class DispatchMethod implements Comparable<DispatchMethod> {
      * priority (class first then method) will be dispatched.
      *
      * @param message the message to be processed by this dispatcher
-     * @throws SmsPatternMismatchError when dispatch method for message cannot be found
+     * @throws SmsPatternMismatchException when dispatch method for message cannot be found
      * @return the reply of the dispatcher
      */
-    public String dispatch(String message) throws SmsPatternMismatchError {
+    public String dispatch(String message) throws SmsPatternMismatchException {
 
         // run through the pattern, otherwise throw an error if Pattern does not match
         Matcher matcher = pattern.matcher(message);
         if (!matcher.matches())
-            throw new SmsPatternMismatchError("message does not match Pattern");
+            throw new SmsPatternMismatchException("message does not match Pattern");
 
         // dynamically construct arguments
         Object[] args = new Object[identifierParams.length];
@@ -233,7 +270,11 @@ class DispatchMethod implements Comparable<DispatchMethod> {
             } else {
                 ArrayDelim delim = identifierParams[i].getDeclaredAnnotation(ArrayDelim.class);
                 String delimRegex = delim == null ? "\\s+" : delim.value();
-                args[i] = TypeConverter.convertParameter(matcher.group(i + 1).trim().split(delimRegex), identifierParams[i]);
+                String text = matcher.group(i + 1).trim();
+                if (text.length() == 0)
+                    args[i] = new String[0];
+                else
+                    args[i] = TypeConverter.convertParameter(text.split(delimRegex), identifierParams[i]);
             }
         }
 
@@ -241,7 +282,8 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         try {
             return (String) method.invoke(module, args);
         } catch (Exception e) {
-            throw new SmsPatternMismatchError(e.getMessage());
+            e.printStackTrace();
+            throw new SmsPatternMismatchException(e.getMessage());
         }
 
     }

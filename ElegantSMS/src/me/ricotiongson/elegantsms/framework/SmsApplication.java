@@ -7,7 +7,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
@@ -15,7 +14,7 @@ import me.ricotiongson.elegantsms.annotations.SmsQuery;
 /**
  * Prepares SMS Module dispatching.
  */
-public class SmsApplication {
+public class SmsApplication implements SmsModule {
 
     // collection of dispatchers for application
     private static Objenesis objenesis = new ObjenesisStd();
@@ -60,19 +59,22 @@ public class SmsApplication {
         return app;
     }
 
-    public String dispatch(String message) throws SmsPatternMismatchError {
+    public String dispatch(String message) throws SmsPatternMismatchException {
         for (DispatchMethod method : dispatchers) {
             if (method.matches(message)) {
                 return method.dispatch(message);
             }
         }
-        throw new SmsPatternMismatchError("no pattern found");
+        throw new SmsPatternMismatchException("no pattern found");
     }
 
     public String dispatchNoThrow(String message) {
         for (DispatchMethod method : dispatchers) {
             if (method.matches(message)) {
-                return method.dispatch(message);
+                try {
+                    return method.dispatch(message);
+                } catch (SmsPatternMismatchException ignore) {
+                }
             }
         }
         return null;
@@ -82,7 +84,10 @@ public class SmsApplication {
         ArrayList<String> replies = new ArrayList<>();
         for (DispatchMethod method : dispatchers) {
             if (method.matches(message)) {
-                replies.add(method.dispatch(message));
+                try {
+                    replies.add(method.dispatch(message));
+                } catch (SmsPatternMismatchException ignore) {
+                }
             }
         }
         return replies.toArray(new String[0]);
