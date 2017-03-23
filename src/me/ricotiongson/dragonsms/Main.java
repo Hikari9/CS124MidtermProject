@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import me.ricotiongson.dragonsms.modules.DragonModule;
 import me.ricotiongson.elegantsms.framework.SmsApplication;
-import me.ricotiongson.elegantsms.framework.SmsPatternMismatchException;
+import me.ricotiongson.elegantsms.util.SmsPatternMismatchException;
 
 public class Main {
 

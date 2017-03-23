@@ -15,6 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
+import me.ricotiongson.elegantsms.util.SmsPatternMismatchException;
 
 /**
  * Prepares SMS Module dispatching.
@@ -23,7 +24,7 @@ public class SmsApplication implements SmsModule {
 
     // collection of dispatchers for application
     private static Objenesis objenesis = new ObjenesisStd();
-    private List<DispatchMethod> dispatchers = new CopyOnWriteArrayList<>();
+    private List<Dispatcher> dispatchers = new CopyOnWriteArrayList<>();
     private Map<Class<? extends SmsModule>, SmsModule> moduleMap = new ConcurrentHashMap<>();
 
     // Empty constructor
@@ -68,7 +69,7 @@ public class SmsApplication implements SmsModule {
         for (Method method : module.getClass().getDeclaredMethods()) {
             method.setAccessible(true);
             if (method.isAnnotationPresent(SmsQuery.class))
-                dispatchers.add(new DispatchMethod(module, method));
+                dispatchers.add(new Dispatcher(module, method));
         }
         // inefficient because resorting, but sufficient for finitely small number of modules
         Collections.sort(dispatchers);
@@ -159,7 +160,7 @@ public class SmsApplication implements SmsModule {
      * @throws SmsPatternMismatchException if there is no format in the app modules matches the message
      */
     public <T> T getReply(Class<T> returnType, String message) throws SmsPatternMismatchException {
-        for (DispatchMethod method : dispatchers)
+        for (Dispatcher method : dispatchers)
             if (method.matches(message)) {
                 Object value = method.dispatch(message);
                 if (value == null)
@@ -181,7 +182,7 @@ public class SmsApplication implements SmsModule {
      */
     public Object[] getAllReplies(String message) {
         ArrayList<Object> replies = new ArrayList<>();
-        for (DispatchMethod method : dispatchers) {
+        for (Dispatcher method : dispatchers) {
             if (method.matches(message)) {
                 try {
                     replies.add(method.dispatch(message));

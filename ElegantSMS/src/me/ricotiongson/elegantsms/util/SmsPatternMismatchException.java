@@ -1,4 +1,4 @@
-package me.ricotiongson.elegantsms.framework;
+package me.ricotiongson.elegantsms.util;
 
 /**
  * Exception class for getReply errors.
