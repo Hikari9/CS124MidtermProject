@@ -5,9 +5,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Annotate SmsModule classes or SmsModule methods to print the constructed regex expressions
+ * for debugging purposes.
+ */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.PARAMETER)
-public @interface ArrayDelim {
-    public String value();
+@Target({ElementType.METHOD, ElementType.TYPE})
+public @interface RegexDebug {
+    public boolean value() default true;
 }
-

@@ -1,10 +1,7 @@
 package me.ricotiongson.dragonsms.session;
 
-import java.util.HashMap;
-
 import room.GameState;
 import room.Room1;
-import room.RoomCommandManager;
 
 public class Session {
     private String name;
@@ -40,4 +37,5 @@ public class Session {
     public void setRoom(Object room) {
         this.room = room;
     }
+
 }

@@ -2,11 +2,13 @@ package me.ricotiongson.dragonsms.modules;
 
 import me.ricotiongson.dragonsms.session.SessionManager;
 import me.ricotiongson.elegantsms.annotations.ArrayDelim;
+import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.framework.Priority;
 import me.ricotiongson.elegantsms.framework.SmsModule;
 
+@RegexDebug
 public class DragonModule extends SessionManager implements SmsModule {
 
     private String sessionId; // stores the name of user in the session
@@ -20,7 +22,7 @@ public class DragonModule extends SessionManager implements SmsModule {
     @SmsQuery("START")
     public String start() {
         startSession(sessionId); // starts the session
-        return checkRoom("Room1"); // checkout Room1
+        return this.go("Room1"); // checkout Room1
     }
 
     @SmsQuery("HINT")
@@ -33,22 +35,22 @@ public class DragonModule extends SessionManager implements SmsModule {
         return checkRoom(this.capitalize(roomName));
     }
 
-    //    @SmsQuery("ROOM<#>")
-    //    String gotoRoom(int roomNumber) {
-    //        return gotoRoom("Room" + roomNumber);
-    //    }
+    @SmsQuery("ROOM<#>")
+    String gotoRoom(int roomNumber) {
+        return checkRoom("Room" + roomNumber);
+    }
 
-    @DispatchPriority(Priority.LOWEST + 1)
+    @DispatchPriority(Priority.LOWEST)
     @SmsQuery("<COMMAND> <PARAMS...>")
-    public String command(String command, @ArrayDelim(" ") String... params) {
+    public String command(String command, @ArrayDelim("\\s+") String... params) {
         return processRoom(command, params);
     }
 
-    //    @SmsQuery("EXIT")
-    //    String exit() {
-    //        System.exit(0);
-    //        return "";
-    //    }
+    @SmsQuery("EXIT")
+    String exit() {
+        System.exit(0);
+        return "";
+    }
 
     private String capitalize(String text) {
         if (text == null || text.length() == 0)

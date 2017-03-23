@@ -1,7 +1,7 @@
 package me.ricotiongson.elegantsms.framework;
 
 /**
- * Exception class for dispatch errors.
+ * Exception class for getReply errors.
  */
 public class SmsPatternMismatchException extends Exception {
 
@@ -13,4 +13,11 @@ public class SmsPatternMismatchException extends Exception {
         super(message);
     }
 
+    public SmsPatternMismatchException(String message, Throwable e) {
+        super(message, e);
+    }
+
+    public SmsPatternMismatchException(Throwable e) {
+        super(e);
+    }
 }

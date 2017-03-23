@@ -4,7 +4,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.Arrays;
 
 import me.ricotiongson.elegantsms.util.TypeConverter;
 
@@ -20,6 +19,7 @@ public class SessionManager {
 
     /**
      * Starts a new session with name
+     *
      * @param name
      */
     public void startSession(String name) {
@@ -27,17 +27,23 @@ public class SessionManager {
     }
 
     /**
-     * Gets the current session
+     * Gets the current session.
      * @return
      */
     public Session getSession() {
         return session;
     }
 
+    /**
+     * Run a method from the current room object.
+     * @param methodName the name of the method
+     * @param params the parameters to pass to the method
+     * @return a String reply after processing the room
+     */
     public String processRoom(String methodName, String... params) {
         Object room = getSession().getRoom();
         if (methodName == null)
-            return "method not found";
+            return "Invalid command.";
         Method[] methodList = room.getClass().getDeclaredMethods();
         for (Method method : methodList) {
             method.setAccessible(true);
@@ -60,19 +66,22 @@ public class SessionManager {
                 if (found) {
                     // we can invoke this method
                     try {
-                        String reply = (String) method.invoke(room, args);
-                        return reply;
+                        Object reply = method.invoke(room, args);
+                        if (reply == null) return null;
+                        return reply.toString();
                     } catch (IllegalAccessException | InvocationTargetException e) {
-                        e.printStackTrace();
+                        // bad reply
+                        return "Bad reply: " + e.getMessage();
                     }
                 }
             }
         }
-        return "method not found";
+        return "Invalid command.";
     }
 
     /**
      * Processes a room with command via the room command manager
+     *
      * @return
      */
     public String checkRoom(String roomName) {
@@ -83,7 +92,7 @@ public class SessionManager {
             room = constructor.newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
-            return "room not found";
+            return "Such room does not exist.";
         }
         getSession().setRoom(room);
         return processRoom("checkRoom");
