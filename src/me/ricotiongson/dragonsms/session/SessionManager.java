@@ -28,6 +28,7 @@ public class SessionManager {
 
     /**
      * Gets the current session.
+     *
      * @return
      */
     public Session getSession() {
@@ -36,8 +37,9 @@ public class SessionManager {
 
     /**
      * Run a method from the current room object.
+     *
      * @param methodName the name of the method
-     * @param params the parameters to pass to the method
+     * @param params     the parameters to pass to the method
      * @return a String reply after processing the room
      */
     public String processRoom(String methodName, String... params) {

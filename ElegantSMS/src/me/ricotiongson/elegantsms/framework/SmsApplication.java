@@ -15,7 +15,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
-import me.ricotiongson.elegantsms.util.TypeConverter;
 
 /**
  * Prepares SMS Module dispatching.
@@ -152,9 +151,10 @@ public class SmsApplication implements SmsModule {
      * Gets a reply from the given message with a specified return type. Navigates through the
      * format and runs the first method that matches the given message. Formats with the higher
      * priority will be processed first.
+     *
      * @param returnType the class of the return type
-     * @param message the message to send
-     * @param <T> template argument for the return type
+     * @param message    the message to send
+     * @param <T>        template argument for the return type
      * @return the reply cast to T
      * @throws SmsPatternMismatchException if there is no format in the app modules matches the message
      */
@@ -175,6 +175,7 @@ public class SmsApplication implements SmsModule {
     /**
      * Gets an array of all replies that match the format of a given message. Module methods with
      * the higher priority will be processed first.
+     *
      * @param message
      * @return an array of replies
      */
@@ -184,8 +185,7 @@ public class SmsApplication implements SmsModule {
             if (method.matches(message)) {
                 try {
                     replies.add(method.dispatch(message));
-                }
-                catch (SmsPatternMismatchException ignore) {
+                } catch (SmsPatternMismatchException ignore) {
                 }
             }
         }
@@ -196,6 +196,7 @@ public class SmsApplication implements SmsModule {
      * Gets a reply from the given message. Navigates through the format and runs the first method
      * that matches the given message. Module methods with the higher priority will be processed
      * first.
+     *
      * @param message the message to send
      * @return a reply or null if no pattern matches
      */
@@ -211,9 +212,10 @@ public class SmsApplication implements SmsModule {
      * Gets a reply from the given message. Navigates through the format and runs the first method
      * that matches the given message. Module methods with the higher priority will be processed
      * first.
+     *
      * @param returnType the class of the return type
-     * @param message the message to send
-     * @param <T> template argument for the return type
+     * @param message    the message to send
+     * @param <T>        template argument for the return type
      * @return a reply or null if no pattern matches
      */
     public <T> T getReplyNoThrow(Class<T> returnType, String message) {

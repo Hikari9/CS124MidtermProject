@@ -2,8 +2,8 @@ package me.ricotiongson.dragonsms.modules;
 
 import me.ricotiongson.dragonsms.session.SessionManager;
 import me.ricotiongson.elegantsms.annotations.ArrayDelim;
-import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
+import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.framework.Priority;
 import me.ricotiongson.elegantsms.framework.SmsModule;
