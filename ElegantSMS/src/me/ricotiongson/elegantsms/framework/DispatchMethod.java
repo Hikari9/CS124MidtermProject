@@ -14,6 +14,7 @@ import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.util.TypeConverter;
+import me.ricotiongson.elegantsms.util.TypeConverterMap;
 
 /**
  * Internal holder class for dispatching methods (package-private)
@@ -29,6 +30,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
     private SmsModule module;
     private Method method;
     private Class<? extends SmsModule> moduleClass;
+    private TypeConverterMap converterMap;
     // priority props
     private int classPriority = Priority.DEFAULT;
     private int methodPriority = Priority.DEFAULT;
@@ -45,12 +47,13 @@ class DispatchMethod implements Comparable<DispatchMethod> {
      * @param module
      * @param method
      */
-    public DispatchMethod(SmsModule module, Method method) {
+    public DispatchMethod(SmsModule module, Method method, TypeConverterMap converterMap) {
 
         // setup model
         this.module = module;
         this.method = method;
         this.moduleClass = module.getClass();
+        this.converterMap = converterMap;
 
         SmsQuery smsQuery = method.getDeclaredAnnotation(SmsQuery.class);
         if (smsQuery == null)
@@ -268,7 +271,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         for (int i = 0; i < size; ++i) {
             if (!identifierIsArray[i]) {
                 try {
-                    args[i] = TypeConverter.convertParameter(matcher.group(i + 1).trim(), identifierParams[i]);
+                    args[i] = converterMap.convert(matcher.group(i + 1).trim(), identifierParams[i].getType());
                 } catch (Throwable e) {
                     throw new SmsPatternMismatchException("cannot convert method parameter", e);
                 }
@@ -280,7 +283,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
                     args[i] = new String[0];
                 else {
                     try {
-                        args[i] = TypeConverter.convertParameter(text.split(delimRegex), identifierParams[i]);
+                        args[i] = converterMap.convertArray(text.split(delimRegex), identifierParams[i].getType());
                     } catch (Throwable e) {
                         throw new SmsPatternMismatchException("cannot convert method parameter", e);
                     }

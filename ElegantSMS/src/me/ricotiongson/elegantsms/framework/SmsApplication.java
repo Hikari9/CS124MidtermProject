@@ -16,6 +16,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.util.TypeConverter;
+import me.ricotiongson.elegantsms.util.TypeConverterFactory;
+import me.ricotiongson.elegantsms.util.TypeConverterMap;
 
 /**
  * Prepares SMS Module dispatching.
@@ -26,9 +28,22 @@ public class SmsApplication implements SmsModule {
     private static Objenesis objenesis = new ObjenesisStd();
     private List<DispatchMethod> dispatchers = new CopyOnWriteArrayList<>();
     private Map<Class<? extends SmsModule>, SmsModule> moduleMap = new ConcurrentHashMap<>();
+    private TypeConverterMap converterMap = TypeConverterFactory.createDefaultConverterMap();
 
     // Empty constructor
     public SmsApplication() {
+    }
+
+    public <T> void registerTypeConverter(Class<T> type, TypeConverter<T> typeConverter) {
+        converterMap.put(type, typeConverter);
+    }
+
+    public <T> void unregisterTypeConverter(Class<T> type) {
+        converterMap.remove(type);
+    }
+
+    public <T> TypeConverter<T> getTypeConverter(Class<T> type) {
+        return (TypeConverter<T>) converterMap.get(type);
     }
 
     /**
@@ -69,7 +84,7 @@ public class SmsApplication implements SmsModule {
         for (Method method : module.getClass().getDeclaredMethods()) {
             method.setAccessible(true);
             if (method.isAnnotationPresent(SmsQuery.class))
-                dispatchers.add(new DispatchMethod(module, method));
+                dispatchers.add(new DispatchMethod(module, method, converterMap));
         }
         // inefficient because resorting, but sufficient for finitely small number of modules
         Collections.sort(dispatchers);

@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 import me.ricotiongson.elegantsms.util.TypeConverter;
+import me.ricotiongson.elegantsms.util.TypeConverterFactory;
 
 /**
  * Class that manages session
@@ -57,7 +58,9 @@ public class SessionManager {
                 for (int i = 0; i < params.length; ++i) {
                     try {
                         // wrong argument
-                        args[i + 1] = TypeConverter.convertParameter(params[i], parameters[i + 1]);
+                        args[i + 1] = TypeConverterFactory
+                            .createConverter(parameters[i + 1].getType())
+                            .convert(params[i]);
                     } catch (Exception e) {
                         found = false;
                         break;
