@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ElegantSMS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ElegantSMS_jar</output-path>
+    <root id="archive" name="ElegantSMS.jar">
+      <element id="module-output" name="ElegantSMS" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ElegantSMS/lib/objenesis-tck-2.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ElegantSMS/lib/fast-classpath-scanner-2.0.17.jar" path-in-jar="/" />
+      <element id="library" level="project" name="objenesis-tck-2.5.1" />
+    </root>
+  </artifact>
+</component>

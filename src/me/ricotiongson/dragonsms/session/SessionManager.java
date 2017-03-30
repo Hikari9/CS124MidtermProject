@@ -82,6 +82,12 @@ public class SessionManager {
         return "Invalid command.";
     }
 
+    private String capitalize(String text) {
+        if (text == null || text.length() == 0)
+            return "";
+        return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
+    }
+
     /**
      * Processes a room with command via the room command manager
      *
@@ -90,7 +96,7 @@ public class SessionManager {
     public String checkRoom(String roomName) {
         Object room;
         try {
-            Constructor constructor = Class.forName("room." + roomName).getDeclaredConstructor();
+            Constructor constructor = Class.forName("room." + capitalize(roomName)).getDeclaredConstructor();
             constructor.setAccessible(true);
             room = constructor.newInstance();
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {
