@@ -22,7 +22,6 @@ import me.ricotiongson.elegantsms.util.TypeConverterMap;
 class DispatchMethod implements Comparable<DispatchMethod> {
 
     // holder class for pre-compiled patterns
-    //    private static final String literal = "(?:[^<>]|\\\\.)+";
     private static final String literal = "[^<>]+";
     private static final String variable = "<([^<>]+)(\\.\\.\\.)?>".replace("(", "(?:");
     private static final Pattern queryTokenizer = Pattern.compile(String.format("(%s|%s)", literal, variable));
