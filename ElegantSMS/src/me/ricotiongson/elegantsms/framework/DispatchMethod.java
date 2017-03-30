@@ -13,7 +13,6 @@ import me.ricotiongson.elegantsms.annotations.CaseSensitive;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;
 import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
-import me.ricotiongson.elegantsms.util.TypeConverter;
 import me.ricotiongson.elegantsms.util.TypeConverterMap;
 
 /**

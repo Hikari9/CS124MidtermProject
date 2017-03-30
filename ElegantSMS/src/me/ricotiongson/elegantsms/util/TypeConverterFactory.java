@@ -20,7 +20,7 @@ public class TypeConverterFactory {
         put(BigDecimal.class, BigDecimal::new);
         // primitives
         put(int.class, arg -> (int) Integer.parseInt(arg));
-        put(long.class,  arg -> (long) Long.parseLong(arg));
+        put(long.class, arg -> (long) Long.parseLong(arg));
         put(boolean.class, arg -> (boolean) Boolean.parseBoolean(arg));
         put(short.class, arg -> (short) Short.parseShort(arg));
         put(byte.class, arg -> (byte) Byte.parseByte(arg));
@@ -37,7 +37,7 @@ public class TypeConverterFactory {
     }
 
     public static <T> TypeConverter<T> createConverter(Class<T> type) {
-         return (TypeConverter<T>) map.get(type);
+        return (TypeConverter<T>) map.get(type);
     }
 
 }
