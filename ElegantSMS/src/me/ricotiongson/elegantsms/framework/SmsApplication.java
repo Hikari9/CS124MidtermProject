@@ -8,10 +8,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
@@ -26,8 +25,8 @@ public class SmsApplication implements SmsModule {
 
     // collection of dispatchers for application
     private static Objenesis objenesis = new ObjenesisStd();
-    private List<DispatchMethod> dispatchers = new CopyOnWriteArrayList<>();
-    private Map<Class<? extends SmsModule>, SmsModule> moduleMap = new ConcurrentHashMap<>();
+    private List<DispatchMethod> dispatchers = new ArrayList<>();
+    private Map<Class<? extends SmsModule>, SmsModule> moduleMap = new HashMap<>();
     private TypeConverterMap converterMap = TypeConverterFactory.createDefaultConverterMap();
 
     // Empty constructor

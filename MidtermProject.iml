@@ -7,8 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ElegantSMS" />
     <orderEntry type="library" name="RoomCommandManager" level="project" />
-    <orderEntry type="library" name="ElegantSMS" level="project" />
+    <orderEntry type="module" module-name="ElegantSMS" />
   </component>
 </module>
