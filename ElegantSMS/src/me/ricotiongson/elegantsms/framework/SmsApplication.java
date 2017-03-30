@@ -31,7 +31,7 @@ public class SmsApplication implements SmsModule {
     private TypeConverterMap converterMap = TypeConverterFactory.createDefaultConverterMap();
 
     // Empty constructor
-    public SmsApplication() {
+    protected SmsApplication() {
     }
 
     public <T> void registerTypeConverter(Class<T> type, TypeConverter<T> typeConverter) {
@@ -160,7 +160,7 @@ public class SmsApplication implements SmsModule {
      * @throws SmsPatternMismatchException if there is no format in the app modules matches the message
      */
     public String getReply(String message) throws SmsPatternMismatchException {
-        return getReply(String.class, message);
+        return getReply(message, String.class);
     }
 
     /**
@@ -173,7 +173,7 @@ public class SmsApplication implements SmsModule {
      * @return the reply cast to T
      * @throws SmsPatternMismatchException if there is no format in the app modules matches the message
      */
-    public <T> T getReply(Class<T> returnType, String message) throws SmsPatternMismatchException {
+    public <T> T getReply(String message, Class<T> returnType) throws SmsPatternMismatchException {
         for (DispatchMethod method : dispatchers)
             if (method.matches(message)) {
                 Object value = method.dispatch(message);
@@ -231,9 +231,9 @@ public class SmsApplication implements SmsModule {
      * @param <T> template argument for the return type
      * @return a reply or null if no pattern matches
      */
-    public <T> T getReplyNoThrow(Class<T> returnType, String message) {
+    public <T> T getReplyNoThrow(String message, Class<T> returnType) {
         try {
-            return getReply(returnType, message);
+            return getReply(message, returnType);
         } catch (SmsPatternMismatchException e) {
             return null;
         }
