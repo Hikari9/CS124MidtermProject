@@ -28,7 +28,7 @@ public class DragonServer extends Thread {
         // read input indefinitely
         in.lines().forEachOrdered(line -> {
             String reply = app.getReplyNoThrow(line);
-            if (reply == null || reply.equals("Invalid command."))
+            if (reply == null)
                 reply = "Invalid command. Send \"HINT\" for a list of possible commands.\n";
             out.print(reply);
         });

@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a698c96b-6388-4cb2-9838-664c264f60d1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" afterPath="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" />
     </list>
@@ -82,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SessionManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="81" column="19" lean-forward="false" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+            <state relative-caret-position="169">
+              <caret line="76" column="62" lean-forward="true" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
               <folding>
                 <element signature="e#778#779#0" expanded="true" />
                 <element signature="e#808#809#0" expanded="true" />
@@ -105,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DragonServer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DragonServer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+            <state relative-caret-position="420">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,8 +216,8 @@
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/AdventureModule.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/Main.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/modules/HintModule.java" />
-        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java" />
         <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java" />
+        <option value="$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java" />
       </list>
     </option>
   </component>
@@ -734,12 +735,12 @@
       <workItem from="1490264992435" duration="38000" />
       <workItem from="1490761108903" duration="3244000" />
       <workItem from="1490850690132" duration="539000" />
-      <workItem from="1490855222379" duration="2240000" />
+      <workItem from="1490855222379" duration="2277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67920000" />
+    <option name="totallyTimeSpent" value="67957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1634,23 +1635,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java">
+    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        <state relative-caret-position="169">
+          <caret line="76" column="62" lean-forward="true" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/session/SessionManager.java">
+    <entry file="file://$PROJECT_DIR$/src/me/ricotiongson/dragonsms/DragonServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="81" column="19" lean-forward="false" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+        <state relative-caret-position="420">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding>
-            <element signature="e#778#779#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
