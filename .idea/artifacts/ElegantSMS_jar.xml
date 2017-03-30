@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="ElegantSMS:jar">
+  <artifact type="jar" name="ElegantSMS:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/ElegantSMS_jar</output-path>
     <root id="archive" name="ElegantSMS.jar">
       <element id="module-output" name="ElegantSMS" />
