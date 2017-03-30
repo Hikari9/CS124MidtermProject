@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
-import me.ricotiongson.elegantsms.util.TypeConverterFactory;
+import com.elegantsms.util.TypeConverterFactory;
 
 /**
  * Class that manages session

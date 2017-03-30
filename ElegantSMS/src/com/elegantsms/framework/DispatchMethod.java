@@ -1,4 +1,8 @@
-package me.ricotiongson.elegantsms.framework;
+package com.elegantsms.framework;
+
+import com.elegantsms.annotations.ArrayDelim;
+import com.elegantsms.annotations.RegexDebug;
+import com.elegantsms.annotations.SmsQuery;
 
 import java.lang.annotation.AnnotationFormatError;
 import java.lang.reflect.Method;
@@ -8,12 +12,9 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import me.ricotiongson.elegantsms.annotations.ArrayDelim;
-import me.ricotiongson.elegantsms.annotations.CaseSensitive;
-import me.ricotiongson.elegantsms.annotations.DispatchPriority;
-import me.ricotiongson.elegantsms.annotations.RegexDebug;
-import me.ricotiongson.elegantsms.annotations.SmsQuery;
-import me.ricotiongson.elegantsms.util.TypeConverterMap;
+import com.elegantsms.annotations.CaseSensitive;
+import com.elegantsms.annotations.DispatchPriority;
+import com.elegantsms.util.TypeConverterMap;
 
 /**
  * Internal holder class for dispatching methods (package-private)

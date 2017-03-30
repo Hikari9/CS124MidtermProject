@@ -1,4 +1,6 @@
-package me.ricotiongson.elegantsms.framework;
+package com.elegantsms.framework;
+
+import com.elegantsms.annotations.SmsQuery;
 
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
@@ -13,10 +15,10 @@ import java.util.List;
 import java.util.Map;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
-import me.ricotiongson.elegantsms.annotations.SmsQuery;
-import me.ricotiongson.elegantsms.util.TypeConverter;
-import me.ricotiongson.elegantsms.util.TypeConverterFactory;
-import me.ricotiongson.elegantsms.util.TypeConverterMap;
+
+import com.elegantsms.util.TypeConverter;
+import com.elegantsms.util.TypeConverterFactory;
+import com.elegantsms.util.TypeConverterMap;
 
 /**
  * Prepares SMS Module dispatching.

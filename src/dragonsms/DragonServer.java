@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-import me.ricotiongson.elegantsms.framework.SmsApplication;
+import com.elegantsms.framework.SmsApplication;
 
 /**
  * Automatically replies to stream of messages.

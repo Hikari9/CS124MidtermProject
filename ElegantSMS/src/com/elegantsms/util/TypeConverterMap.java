@@ -1,4 +1,4 @@
-package me.ricotiongson.elegantsms.util;
+package com.elegantsms.util;
 
 import java.util.Arrays;
 import java.util.HashMap;

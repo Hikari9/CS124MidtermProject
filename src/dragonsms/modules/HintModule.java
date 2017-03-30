@@ -5,9 +5,9 @@ import java.lang.reflect.Parameter;
 
 import dragonsms.session.Session;
 import dragonsms.session.SessionManager;
-import me.ricotiongson.elegantsms.annotations.RegexDebug;
-import me.ricotiongson.elegantsms.annotations.SmsQuery;
-import me.ricotiongson.elegantsms.framework.SmsModule;
+import com.elegantsms.annotations.RegexDebug;
+import com.elegantsms.annotations.SmsQuery;
+import com.elegantsms.framework.SmsModule;
 
 @RegexDebug(false)
 public class HintModule extends SessionManager implements SmsModule {
