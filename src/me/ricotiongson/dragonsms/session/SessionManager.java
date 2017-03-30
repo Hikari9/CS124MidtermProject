@@ -79,7 +79,7 @@ public class SessionManager {
                 }
             }
         }
-        return "Invalid command.";
+        return null;
     }
 
     private String capitalize(String text) {

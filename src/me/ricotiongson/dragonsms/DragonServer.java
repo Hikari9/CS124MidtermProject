@@ -7,7 +7,6 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 import me.ricotiongson.elegantsms.framework.SmsApplication;
-import me.ricotiongson.elegantsms.framework.SmsPatternMismatchException;
 
 /**
  * Automatically replies to stream of messages.
