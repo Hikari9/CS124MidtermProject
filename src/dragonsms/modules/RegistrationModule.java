@@ -1,6 +1,6 @@
-package me.ricotiongson.dragonsms.modules;
+package dragonsms.modules;
 
-import me.ricotiongson.dragonsms.session.SessionManager;
+import dragonsms.session.SessionManager;
 import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.SmsQuery;
 import me.ricotiongson.elegantsms.framework.SmsModule;

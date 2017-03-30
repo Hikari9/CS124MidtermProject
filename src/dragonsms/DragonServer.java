@@ -1,4 +1,4 @@
-package me.ricotiongson.dragonsms;
+package dragonsms;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

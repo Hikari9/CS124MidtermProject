@@ -1,4 +1,4 @@
-package me.ricotiongson.dragonsms;
+package dragonsms;
 
 public class Main {
 

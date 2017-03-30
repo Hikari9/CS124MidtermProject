@@ -1,11 +1,10 @@
-package me.ricotiongson.dragonsms.session;
+package dragonsms.session;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
-import me.ricotiongson.elegantsms.util.TypeConverter;
 import me.ricotiongson.elegantsms.util.TypeConverterFactory;
 
 /**

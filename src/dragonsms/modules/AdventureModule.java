@@ -1,10 +1,6 @@
-package me.ricotiongson.dragonsms.modules;
+package dragonsms.modules;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
-
-import me.ricotiongson.dragonsms.session.Session;
-import me.ricotiongson.dragonsms.session.SessionManager;
+import dragonsms.session.SessionManager;
 import me.ricotiongson.elegantsms.annotations.ArrayDelim;
 import me.ricotiongson.elegantsms.annotations.RegexDebug;
 import me.ricotiongson.elegantsms.annotations.DispatchPriority;

@@ -1,4 +1,4 @@
-package me.ricotiongson.dragonsms.session;
+package dragonsms.session;
 
 import room.GameState;
 import room.Room1;
