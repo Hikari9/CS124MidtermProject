@@ -12,6 +12,6 @@
         <!-- DB schema will be updated if needed -->
         <property name="connection.username">root</property>
         <property name="hbm2ddl.auto">update</property>
-        <mapping class="dragonsms.entities.SessionEntity"/>
+        <mapping class="dragonsms.session.Session"/>
     </session-factory>
 </hibernate-configuration>

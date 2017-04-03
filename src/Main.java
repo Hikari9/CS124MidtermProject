@@ -40,6 +40,7 @@ public class Main {
                     System.out.println("  " + o);
                 }
             }
+            dragonsms.Main.main(args);
         } finally {
             session.close();
         }
