@@ -10,6 +10,24 @@
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
       </configuration>
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="NewPersistenceUnit" value="fe73ff9a-6527-4fed-a8fb-356c7307a9c7" />
+          <factory-entry name="persistenceUnit" value="dataSource" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/applicationContext_jpa.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -43,6 +61,28 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../Demos/WebDependenciesWithRest/lib/mysql/mysql-connector-java-5.1.18.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="JPA 2.1-2.1" level="project" />
+    <orderEntry type="library" name="Spring-4.3.7.RELEASE" level="project" />
+    <orderEntry type="module-library">
+      <library name="Spring Data JPA-1.3.3" type="spring-data-jpa">
+        <properties version="1.3.3" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/spring-data-jpa-1.3.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/spring-data-commons-core-1.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../Demos/WebDependenciesWithRest/lib/apache/commons-dbcp-1.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
