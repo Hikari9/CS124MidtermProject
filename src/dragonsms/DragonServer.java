@@ -13,6 +13,18 @@ import com.elegantsms.framework.SmsApplication;
  */
 public class DragonServer extends Thread {
 
+    // Driver program
+    public static void main(String[] args) {
+
+        // load Spring
+        SpringDriver.run();
+
+        // create dragon server from System I/O
+        new DragonServer(System.in, System.out).start();
+        System.out.println("Welcome to DragonSMS! Send HINT to get started!");
+
+    }
+
     public final SmsApplication app;
     public final BufferedReader in;
     public final PrintStream out;
