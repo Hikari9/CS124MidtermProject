@@ -7,8 +7,6 @@
       <root url="jar://$PROJECT_DIR$/lib/spring-aop-4.3.7.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-expression-4.3.7.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.7.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-instrument-4.3.7.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-instrument-tomcat-4.3.7.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.7.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-jms-4.3.7.RELEASE.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/spring-jdbc-4.3.7.RELEASE.jar!/" />
