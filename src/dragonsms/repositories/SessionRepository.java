@@ -7,5 +7,5 @@ import dragonsms.session.Session;
 
 @Repository
 public interface SessionRepository extends JpaRepository<Session, Long> {
-    Session findByName(String name);
+//    Session findByName(String name);
 }
