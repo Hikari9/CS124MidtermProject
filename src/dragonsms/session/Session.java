@@ -88,7 +88,7 @@ public class Session {
 
     @Override
     public String toString() {
-        return getName() + " [gameState:" + gameState + "]";
+        return getName() + " @" + getRoomName() + " [gameState:" + gameState + "]";
     }
 
 }

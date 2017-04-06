@@ -34,6 +34,7 @@ public class SessionManager {
             session = getDao().findOne(name);
         else
             session = getDao().saveAndFlush(new Session(name));
+        System.err.println("Starting session " + session);
     }
 
     /**
