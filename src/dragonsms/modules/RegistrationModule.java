@@ -50,8 +50,9 @@ public class RegistrationModule extends SessionManager implements SmsModule {
     @DispatchPriority(Priority.LOWEST + 1)
     @SmsQuery("END")
     String end() {
+        String sessionName = getSession().toString();
         endSession();
-        return "Ended session";
+        return "Ended session: " + sessionName;
     }
 
     @SmsQuery("HINT")
@@ -70,7 +71,7 @@ public class RegistrationModule extends SessionManager implements SmsModule {
             .append("\tCONTINUE           - continues from a previous session\n");
 
         if (getSession() != null)
-            sb.append("\tEND                - ends the current session");
+            sb.append("\tEND                - ends the current session"\n);
 
         sb.append("\tEXIT               - exits the application\n");
 

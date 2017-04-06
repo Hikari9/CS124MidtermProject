@@ -30,7 +30,7 @@ public class DragonServer extends Thread {
 
         // create dragon server from System I/O
         new DragonServer(System.in, System.out).start();
-        System.out.println("Welcome to DragonSMS! Send REGISTER <NAME> to get started!");
+        System.out.println("Welcome to DragonSMS! Send HINT to get started!");
 
     }
 
