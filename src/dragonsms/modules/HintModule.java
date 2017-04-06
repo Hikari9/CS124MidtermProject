@@ -9,7 +9,7 @@ import com.elegantsms.annotations.RegexDebug;
 import com.elegantsms.annotations.SmsQuery;
 import com.elegantsms.framework.SmsModule;
 
-@RegexDebug(false)
+//@RegexDebug
 public class HintModule extends SessionManager implements SmsModule {
 
     @SmsQuery("HINT")

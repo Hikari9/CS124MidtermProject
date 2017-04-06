@@ -1,6 +1,9 @@
 package com.elegantsms.framework;
 
 import com.elegantsms.annotations.SmsQuery;
+import com.elegantsms.util.TypeConverter;
+import com.elegantsms.util.TypeConverterFactory;
+import com.elegantsms.util.TypeConverterMap;
 
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
@@ -15,10 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
-
-import com.elegantsms.util.TypeConverter;
-import com.elegantsms.util.TypeConverterFactory;
-import com.elegantsms.util.TypeConverterMap;
 
 /**
  * Prepares SMS Module dispatching.
@@ -198,7 +197,7 @@ public class SmsApplication implements SmsModule {
      */
     public Object[] getAllReplies(String message) {
         ArrayList<Object> replies = new ArrayList<>();
-        for (Dispatcher method : dispatchers) {
+        for (DispatchMethod method : dispatchers) {
             if (method.matches(message)) {
                 try {
                     replies.add(method.dispatch(message));

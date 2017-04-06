@@ -8,7 +8,7 @@ import com.elegantsms.annotations.SmsQuery;
 import com.elegantsms.framework.Priority;
 import com.elegantsms.framework.SmsModule;
 
-@RegexDebug(false)
+//@RegexDebug
 public class AdventureModule extends SessionManager implements SmsModule {
 
     @SmsQuery("GO <ROOM#>")

@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ElegantSMS/ElegantSMS.iml" filepath="$PROJECT_DIR$/ElegantSMS/ElegantSMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/MidtermProject.iml" filepath="$PROJECT_DIR$/MidtermProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Demos/WebDependenciesWithRest/WebDependenciesWithRest.iml" filepath="$PROJECT_DIR$/../Demos/WebDependenciesWithRest/WebDependenciesWithRest.iml" />
     </modules>
   </component>
 </project>

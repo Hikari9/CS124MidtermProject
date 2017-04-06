@@ -197,7 +197,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
 
         RegexDebug classDebug = moduleClass.getDeclaredAnnotation(RegexDebug.class);
         RegexDebug methodDebug = method.getDeclaredAnnotation(RegexDebug.class);
-        if ((classDebug != null && classDebug.value()) || (methodDebug != null && methodDebug.value())) {
+        if (classDebug != null || methodDebug != null) {
             System.out.println("@RegexDebug:"
                 + "\n\tMethod:  " + moduleClass.getCanonicalName() + "#" + method.getName()
                 + "\n\tPattern: " + pattern);
