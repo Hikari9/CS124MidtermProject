@@ -54,5 +54,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="apache" level="project" />
   </component>
 </module>
