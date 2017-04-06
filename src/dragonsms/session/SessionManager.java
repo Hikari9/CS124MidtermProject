@@ -30,12 +30,17 @@ public class SessionManager {
      * @param name
      */
     public void startSession(String name) {
-        session = getDao().findOne(name);
-        if (session == null) {
-            // create new session and put to dao
-            session = new Session(name);
-            getDao().save(session);
-        }
+        if (getDao().exists(name))
+            session = getDao().findOne(name);
+        else
+            session = getDao().saveAndFlush(new Session(name));
+    }
+
+    /**
+     * Ends the current session
+     */
+    public void endSession() {
+        session = null;
     }
 
     /**

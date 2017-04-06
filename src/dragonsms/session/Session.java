@@ -5,10 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import room.GameState;
-import room.Room1;
 
 @Entity
 @Table(name = "session", schema = "DragonSMS")
@@ -22,13 +20,14 @@ public class Session {
     @Column(name = "gameState", nullable = true)
     private int gameState;
 
-    @Transient
-    private Object room;
+    @Basic
+    @Column(name = "room", nullable = false, columnDefinition = "varchar(255) default 'Room1'")
+    private String room;
 
     public Session(String name) {
         this.name = name;
         gameState = 0;
-        room = new Room1();
+        room = "Room1";
     }
 
     public Session() {
@@ -54,11 +53,19 @@ public class Session {
     }
 
     public Object getRoom() {
+        try {
+            return Class.forName("room." + room).newInstance();
+        } catch (Exception ignore) {
+        }
+        return null;
+    }
+
+    public String getRoomName() {
         return room;
     }
 
     public void setRoom(Object room) {
-        this.room = room;
+        this.room = room.getClass().getSimpleName();
     }
 
     @Override

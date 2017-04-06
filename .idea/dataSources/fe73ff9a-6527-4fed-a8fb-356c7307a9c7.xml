@@ -30,17 +30,15 @@
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="17" parent="13" name="session_name_uindex">
-      <ColNames>name</ColNames>
-      <Unique>1</Unique>
-    </index>
+    <column id="17" parent="13" name="room">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;Room1&apos;</DefaultExpression>
+    </column>
     <key id="18" parent="13" name="PRIMARY">
       <ColNames>name</ColNames>
       <Primary>1</Primary>
-    </key>
-    <key id="19" parent="13" name="session_name_uindex">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>session_name_uindex</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
