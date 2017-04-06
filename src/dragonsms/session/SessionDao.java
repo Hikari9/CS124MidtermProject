@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 
 import dragonsms.repositories.SessionRepository;
 
-// Singleton componente to access the dao in hibernate, only visible to SessionManager
+// Singleton component to access the dao in hibernate, only visible to SessionManager
 @Component
 final class SessionDao {
 
