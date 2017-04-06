@@ -12,7 +12,6 @@ import javax.persistence.Transient;
 import room.GameState;
 import room.Room1;
 
-
 @Entity
 @Table(name = "session", schema = "DragonSMS")
 public class Session {
@@ -80,6 +79,11 @@ public class Session {
         int result = getName().hashCode();
         result = 31 * result + Integer.hashCode(gameState);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " [gameState:" + gameState + "]";
     }
 
 }

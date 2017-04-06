@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import dragonsms.session.Session;
 
 @Repository
-public interface SessionRepository extends JpaRepository<Session, Long> {
+public interface SessionRepository extends JpaRepository<Session, String> {
 }

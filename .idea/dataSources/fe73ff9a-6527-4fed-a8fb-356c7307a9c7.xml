@@ -15,33 +15,32 @@
     <schema id="9" parent="1" name="root"/>
     <schema id="10" parent="1" name="sys"/>
     <schema id="11" parent="1" name="test"/>
-    <table id="12" parent="2" name="session"/>
-    <column id="13" parent="12" name="id">
+    <table id="12" parent="2" name="hibernate_sequence"/>
+    <table id="13" parent="2" name="session"/>
+    <column id="14" parent="12" name="next_val">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>bigint(20)|0</DataType>
     </column>
-    <column id="14" parent="12" name="name">
-      <Position>2</Position>
+    <column id="15" parent="13" name="name">
+      <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="12" name="gameState">
-      <Position>3</Position>
+    <column id="16" parent="13" name="gameState">
+      <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="16" parent="12" name="name">
+    <index id="17" parent="13" name="session_name_uindex">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="17" parent="12" name="PRIMARY">
-      <ColNames>id</ColNames>
+    <key id="18" parent="13" name="PRIMARY">
+      <ColNames>name</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="18" parent="12" name="name">
+    <key id="19" parent="13" name="session_name_uindex">
       <ColNames>name</ColNames>
-      <UnderlyingIndexName>name</UnderlyingIndexName>
+      <UnderlyingIndexName>session_name_uindex</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
