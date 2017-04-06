@@ -23,11 +23,4 @@ public class AdventureModule extends SessionManager implements SmsModule {
         return processRoom(command, params);
     }
 
-    @DispatchPriority(Priority.LOWEST + 1)
-    @SmsQuery("EXIT")
-    String exit() {
-        System.exit(0);
-        return "";
-    }
-
 }

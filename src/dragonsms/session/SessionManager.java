@@ -7,6 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
+import dragonsms.entities.Session;
 import dragonsms.repositories.SessionRepository;
 import room.GameState;
 

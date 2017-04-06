@@ -1,4 +1,4 @@
-package dragonsms.session;
+package dragonsms.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -55,8 +55,7 @@ public class Session {
     public Object getRoom() {
         try {
             return Class.forName("room." + room).newInstance();
-        } catch (Exception ignore) {
-        }
+        } catch (Exception ignore) {}
         return null;
     }
 
@@ -66,24 +65,6 @@ public class Session {
 
     public void setRoom(Object room) {
         this.room = room.getClass().getSimpleName();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Session that = (Session) o;
-
-        if (getName().equals(that.getName())) return false;
-        return gameState == that.gameState;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getName().hashCode();
-        result = 31 * result + Integer.hashCode(gameState);
-        return result;
     }
 
     @Override
