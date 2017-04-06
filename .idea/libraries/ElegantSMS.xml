@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ElegantSMS">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ElegantSMS.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

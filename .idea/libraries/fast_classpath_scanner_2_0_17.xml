@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="fast-classpath-scanner-2.0.17">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/ElegantSMS/lib/fast-classpath-scanner-2.0.17.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
