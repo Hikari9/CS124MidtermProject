@@ -10,7 +10,7 @@ import com.elegantsms.framework.SmsModule;
 
 import java.util.Arrays;
 
-//@RegexDebug
+@RegexDebug
 public class AdventureModule extends SessionManager implements SmsModule {
 
     @SmsQuery("GO <ROOM#>")

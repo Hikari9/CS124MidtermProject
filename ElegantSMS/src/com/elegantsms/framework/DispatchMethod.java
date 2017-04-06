@@ -191,9 +191,9 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         }
         patternBuilder.append("$");
         if (method.isAnnotationPresent(CaseSensitive.class))
-            this.pattern = Pattern.compile(patternBuilder.toString());
+            this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.DOTALL);
         else
-            this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.CASE_INSENSITIVE);
+            this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.DOTALL|Pattern.CASE_INSENSITIVE);
 
         RegexDebug classDebug = moduleClass.getDeclaredAnnotation(RegexDebug.class);
         RegexDebug methodDebug = method.getDeclaredAnnotation(RegexDebug.class);
@@ -281,11 +281,11 @@ class DispatchMethod implements Comparable<DispatchMethod> {
                 if (text.length() == 0)
                     args[i] = new String[0];
                 else {
-                    try {
-                        args[i] = converterMap.convertArray(text.split(delimRegex), identifierParams[i].getType());
-                    } catch (Throwable e) {
-                        throw new SmsPatternMismatchException("cannot convert method parameter", e);
-                    }
+                    String[] sp = text.split(delimRegex);
+                    if (identifierParams[i].getType().equals(String[].class))
+                        args[i] = sp;
+                    else
+                        args[i] = Arrays.stream(sp).map(item -> converterMap.convert(item, Object.class)).toArray();
                 }
             }
         }
