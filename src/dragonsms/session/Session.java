@@ -18,11 +18,6 @@ import room.Room1;
 public class Session {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private int id;
-
-    @Basic
     @Column(name = "name", nullable = false, unique = true, length = 255)
     private String name;
 
@@ -44,10 +39,6 @@ public class Session {
     }
 
     /* GETTERS AND SETTERS */
-
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -80,15 +71,13 @@ public class Session {
 
         Session that = (Session) o;
 
-        if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (getName().equals(that.getName())) return false;
         return gameState == that.gameState;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        int result = getName().hashCode();
         result = 31 * result + Integer.hashCode(gameState);
         return result;
     }
