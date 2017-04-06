@@ -13,12 +13,10 @@ import java.io.PrintStream;
  */
 public class DragonServer extends Thread {
 
-    public final SmsApplication app;
     public final BufferedReader in;
     public final PrintStream out;
 
     public DragonServer(InputStream input, OutputStream output) {
-        this.app = SmsApplication.loadPackage(getClass().getPackage().getName() + ".modules");
         this.in = new BufferedReader(new InputStreamReader(input));
         this.out = new PrintStream(output);
     }
@@ -34,6 +32,8 @@ public class DragonServer extends Thread {
 
     @Override
     public void run() {
+        SmsApplication app = SmsApplication.loadPackage(getClass().getPackage().getName() + ".modules");
+
         // read input indefinitely
         in.lines().forEachOrdered(line -> {
             String reply = app.getReplyNoThrow(line);

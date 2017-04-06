@@ -19,7 +19,7 @@ public class SessionManager {
     /**
      * Static session only visible to descendant modules
      */
-    private static Session session;
+    private final static ThreadLocal<Session> session = new ThreadLocal<>();
 
     public SessionRepository getDao() {
         return SessionDao.getInstance().getDao();
@@ -32,9 +32,9 @@ public class SessionManager {
      */
     public void startSession(String name) {
         if (getDao().exists(name))
-            session = getDao().findOne(name);
+            session.set(getDao().findOne(name));
         else
-            session = getDao().saveAndFlush(new Session(name));
+            session.set(getDao().saveAndFlush(new Session(name)));
         System.err.println("Starting session " + session);
     }
 
@@ -42,7 +42,7 @@ public class SessionManager {
      * Ends the current session
      */
     public void endSession() {
-        session = null;
+        session.set(null);
     }
 
     /**
@@ -51,7 +51,7 @@ public class SessionManager {
      * @return
      */
     public Session getSession() {
-        return session;
+        return session.get();
     }
 
     /**
@@ -72,7 +72,7 @@ public class SessionManager {
             if (method.getName().equalsIgnoreCase(methodName) && method.getParameterCount() == params.length + 1) {
                 Parameter[] parameters = method.getParameters();
                 Object[] args = new Object[params.length + 1];
-                args[0] = session.getGameState(); // first argument is always game state
+                args[0] = getSession().getGameState(); // first argument is always game state
                 boolean found = true;
                 // cast via type conversion
                 for (int i = 0; i < params.length; ++i) {
