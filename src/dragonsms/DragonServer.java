@@ -41,8 +41,8 @@ public class DragonServer extends Thread {
         in.lines().forEachOrdered(line -> {
             String reply = app.getReplyNoThrow(line);
             if (reply == null)
-                reply = "Invalid command. Send \"HINT\" for a list of possible commands.\n";
-            out.print(reply);
+                reply = "Invalid command. Send \"HINT\" for a list of possible commands.";
+            out.println(reply);
         });
     }
 

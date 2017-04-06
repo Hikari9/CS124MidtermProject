@@ -4,8 +4,12 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.util.Arrays;
 
 import com.elegantsms.util.TypeConverterFactory;
+
+import dragonsms.repositories.SessionRepository;
+import room.GameState;
 
 /**
  * Class that manages session
@@ -17,13 +21,22 @@ public class SessionManager {
      */
     private static Session session;
 
+    public SessionRepository getDao() {
+        return SessionDao.getInstance().getDao();
+    }
+
     /**
      * Starts a new session with name
      *
      * @param name
      */
     public void startSession(String name) {
-        SessionManager.session = new Session(name);
+        session = getDao().findOne(name);
+        if (session == null) {
+            // create new session and put to dao
+            session = new Session(name);
+            getDao().save(session);
+        }
     }
 
     /**
@@ -72,6 +85,10 @@ public class SessionManager {
                     try {
                         Object reply = method.invoke(room, args);
                         if (reply == null) return null;
+                        // successful invoke, set new game state and save to dao
+                        GameState state = (GameState) args[0];
+                        getSession().setGameState(state);
+                        getDao().save(getSession());
                         return reply.toString();
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         // bad reply

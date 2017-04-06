@@ -12,11 +12,14 @@ public class RegistrationModule extends SessionManager implements SmsModule {
     @SmsQuery("REGISTER <NAME>\n")
     public String register(String name) {
         this.sessionId = name;
-        return "Hello, " + name + ", welcome to DragonSMS";
+        return "Hello, " + name + ", welcome to DragonSMS. Send START to play.";
     }
 
     @SmsQuery("START")
     public String start() {
+        if (sessionId == null) {
+            return "Cannot start session! Register your name first.";
+        }
         startSession(sessionId); // starts the session
         return checkRoom("Room1"); // checkout Room1
     }

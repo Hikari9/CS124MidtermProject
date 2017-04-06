@@ -8,6 +8,8 @@ import com.elegantsms.annotations.SmsQuery;
 import com.elegantsms.framework.Priority;
 import com.elegantsms.framework.SmsModule;
 
+import java.util.Arrays;
+
 //@RegexDebug
 public class AdventureModule extends SessionManager implements SmsModule {
 
@@ -22,7 +24,7 @@ public class AdventureModule extends SessionManager implements SmsModule {
         return processRoom(command, params);
     }
 
-    @DispatchPriority(Priority.LOWEST)
+    @DispatchPriority(Priority.LOWEST + 1)
     @SmsQuery("EXIT")
     String exit() {
         System.exit(0);
