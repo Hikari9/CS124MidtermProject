@@ -1,8 +1,11 @@
 package com.elegantsms.framework;
 
 import com.elegantsms.annotations.ArrayDelim;
+import com.elegantsms.annotations.CaseSensitive;
+import com.elegantsms.annotations.DispatchPriority;
 import com.elegantsms.annotations.RegexDebug;
 import com.elegantsms.annotations.SmsQuery;
+import com.elegantsms.util.TypeConverterMap;
 
 import java.lang.annotation.AnnotationFormatError;
 import java.lang.reflect.Method;
@@ -11,10 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.elegantsms.annotations.CaseSensitive;
-import com.elegantsms.annotations.DispatchPriority;
-import com.elegantsms.util.TypeConverterMap;
 
 /**
  * Internal holder class for dispatching methods (package-private)
@@ -193,7 +192,7 @@ class DispatchMethod implements Comparable<DispatchMethod> {
         if (method.isAnnotationPresent(CaseSensitive.class))
             this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.DOTALL);
         else
-            this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.DOTALL|Pattern.CASE_INSENSITIVE);
+            this.pattern = Pattern.compile(patternBuilder.toString(), Pattern.DOTALL | Pattern.CASE_INSENSITIVE);
 
         RegexDebug classDebug = moduleClass.getDeclaredAnnotation(RegexDebug.class);
         RegexDebug methodDebug = method.getDeclaredAnnotation(RegexDebug.class);

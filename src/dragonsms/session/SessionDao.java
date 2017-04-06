@@ -11,8 +11,14 @@ import dragonsms.repositories.SessionRepository;
 @Component
 public final class SessionDao {
 
+    private static SessionDao instance;
     @Autowired
     protected SessionRepository dao;
+
+    public static SessionDao getInstance() {
+        return instance;
+    }
+
     public SessionRepository getDao() {
         return dao;
     }
@@ -21,11 +27,6 @@ public final class SessionDao {
     protected void setInstance() {
         System.err.println("INFO: Autowired SessionRepository dao to SessionDao instance");
         instance = this;
-    }
-
-    private static SessionDao instance;
-    public static SessionDao getInstance() {
-        return instance;
     }
 
 }

@@ -1,13 +1,13 @@
 package dragonsms.modules;
 
+import com.elegantsms.annotations.SmsQuery;
+import com.elegantsms.framework.SmsModule;
+
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 import dragonsms.session.Session;
 import dragonsms.session.SessionManager;
-import com.elegantsms.annotations.RegexDebug;
-import com.elegantsms.annotations.SmsQuery;
-import com.elegantsms.framework.SmsModule;
 
 //@RegexDebug
 public class HintModule extends SessionManager implements SmsModule {

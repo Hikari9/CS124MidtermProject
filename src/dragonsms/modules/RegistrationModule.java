@@ -1,14 +1,15 @@
 package dragonsms.modules;
 
-import dragonsms.session.SessionManager;
-import com.elegantsms.annotations.RegexDebug;
 import com.elegantsms.annotations.SmsQuery;
 import com.elegantsms.framework.SmsModule;
+
+import dragonsms.session.SessionManager;
 
 //@RegexDebug
 public class RegistrationModule extends SessionManager implements SmsModule {
 
     private String sessionId; // stores the name of user in the session
+
     @SmsQuery("REGISTER <NAME>\n")
     public String register(String name) {
         this.sessionId = name;

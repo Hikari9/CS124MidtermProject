@@ -1,14 +1,13 @@
 package dragonsms.modules;
 
-import dragonsms.session.SessionManager;
 import com.elegantsms.annotations.ArrayDelim;
-import com.elegantsms.annotations.RegexDebug;
 import com.elegantsms.annotations.DispatchPriority;
+import com.elegantsms.annotations.RegexDebug;
 import com.elegantsms.annotations.SmsQuery;
 import com.elegantsms.framework.Priority;
 import com.elegantsms.framework.SmsModule;
 
-import java.util.Arrays;
+import dragonsms.session.SessionManager;
 
 @RegexDebug
 public class AdventureModule extends SessionManager implements SmsModule {
