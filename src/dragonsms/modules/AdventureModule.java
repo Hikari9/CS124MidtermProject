@@ -9,7 +9,7 @@ import com.elegantsms.framework.SmsModule;
 
 import dragonsms.session.SessionManager;
 
-@RegexDebug
+//@RegexDebug
 public class AdventureModule extends SessionManager implements SmsModule {
 
     @SmsQuery("GO <ROOM#>")

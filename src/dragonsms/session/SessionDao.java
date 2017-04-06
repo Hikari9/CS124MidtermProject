@@ -7,20 +7,19 @@ import javax.annotation.PostConstruct;
 
 import dragonsms.repositories.SessionRepository;
 
-// here is where spring comes in to create the dao
+// Singleton componente to access the dao
 @Component
 public final class SessionDao {
 
-    private static SessionDao instance;
     @Autowired
     protected SessionRepository dao;
-
-    public static SessionDao getInstance() {
-        return instance;
-    }
-
     public SessionRepository getDao() {
         return dao;
+    }
+
+    private static SessionDao instance;
+    public static SessionDao getInstance() {
+        return instance;
     }
 
     @PostConstruct
