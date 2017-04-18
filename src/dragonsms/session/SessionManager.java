@@ -2,6 +2,9 @@ package dragonsms.session;
 
 import com.elegantsms.util.TypeConverterFactory;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -17,46 +20,46 @@ import room.GameState;
 public class SessionManager {
 
     /**
-     * Static session only visible to descendant modules
+     * A reference to the current session managed by this class.
      */
-    private final static ThreadLocal<Session> session = new ThreadLocal<>();
-
-    public SessionRepository getDao() {
-        return SessionDao.getInstance().getDao();
-    }
-
-    /**
-     * Starts a new session with name
-     *
-     * @param name
-     */
-    public void startSession(String name) {
-        if (getDao().exists(name))
-            session.set(getDao().findOne(name));
-        else
-            session.set(getDao().saveAndFlush(new Session(name)));
-        System.err.println("Starting session " + session);
-    }
-
-    /**
-     * Ends the current session
-     */
-    public void endSession() {
-        session.set(null);
-    }
+    private Session session;
 
     /**
      * Gets the current session.
-     *
-     * @return
+     * @return the current session
      */
     public Session getSession() {
-        return session.get();
+        return session;
+    }
+
+    /**
+     * Gets the database repository that contains session information.
+     */
+    public SessionRepository getRepository() {
+        return SessionDao.getRepository();
+    }
+
+    /**
+     * Starts a new session with a name.
+     * @param name the name of the new session
+     */
+    public void startNewSession(String name) {
+        if (getRepository().exists(name))
+            session = getRepository().findOne(name);
+        else
+            session = getRepository().saveAndFlush(new Session(name));
+        System.err.println("Starting new session " + session);
+    }
+
+    /**
+     * Ends the current session.
+     */
+    public void endSession() {
+        session = null;
     }
 
     /**
      * Run a method from the current room object.
-     *
      * @param methodName the name of the method
      * @param params     the parameters to pass to the method
      * @return a String reply after processing the room
@@ -94,7 +97,7 @@ public class SessionManager {
                         // successful invoke, set new game state and save to dao
                         GameState state = (GameState) args[0];
                         getSession().setGameState(state);
-                        getDao().save(getSession());
+                        getRepository().save(getSession());
                         return reply.toString();
                     } catch (IllegalAccessException | InvocationTargetException e) {
                         // bad reply
@@ -106,6 +109,12 @@ public class SessionManager {
         return null;
     }
 
+    /**
+     * Utility method to capitalize text. Used for case-sensitive reflection to
+     * get the Room class.
+     * @param text the text to capitalize
+     * @return capitalized text
+     */
     private String capitalize(String text) {
         if (text == null || text.length() == 0)
             return "";
@@ -113,9 +122,8 @@ public class SessionManager {
     }
 
     /**
-     * Processes a room with command via the room command manager
-     *
-     * @return
+     * Checks out a room. Creates the room object using its default constructor.
+     * @return a reply upon checkout out the room
      */
     public String checkRoom(String roomName) {
         Object room;

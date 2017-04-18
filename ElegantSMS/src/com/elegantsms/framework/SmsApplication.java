@@ -9,6 +9,7 @@ import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -175,16 +176,22 @@ public class SmsApplication implements SmsModule {
      * @throws SmsPatternMismatchException if there is no format in the app modules matches the message
      */
     public <T> T getReply(String message, Class<T> returnType) throws SmsPatternMismatchException {
-        for (DispatchMethod method : dispatchers)
+        for (DispatchMethod method : dispatchers) {
             if (method.matches(message)) {
-                Object value = method.dispatch(message);
-                if (value == null)
-                    return null;
-                if (returnType.equals(String.class))
-                    return (T) value.toString();
-                else
-                    return (T) value;
+                Object value;
+                try {
+                    value = method.dispatch(message);
+                    if (value == null)
+                        return null;
+                    if (returnType.equals(String.class))
+                        return (T) value.toString();
+                    else
+                        return (T) value;
+                } catch (Throwable e) {
+                    throw new SmsPatternMismatchException(e);
+                }
             }
+        }
         throw new SmsPatternMismatchException("no pattern found");
     }
 
@@ -240,6 +247,44 @@ public class SmsApplication implements SmsModule {
         } catch (SmsPatternMismatchException e) {
             return null;
         }
+    }
+
+    /**
+     * Injects a variable into a module.
+     * @param name the name of the field to inject into
+     * @param value the value to inject
+     * @param module the module where the value is to be injected to
+     * @return true if the injection was successful or not.
+     */
+    public boolean inject(String name, Object value, Class<? extends SmsModule> module) {
+        if (moduleMap.containsKey(module)) {
+            SmsModule instance = moduleMap.get(module);
+            try {
+                Field field = module.getDeclaredField(name);
+                field.setAccessible(true);
+                if (field.isAnnotationPresent(SmsInjection.class)) {
+                    field.set(instance, value);
+                    return true;
+                }
+            } catch (NoSuchFieldException | IllegalAccessException ignore) {
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Injects a variable to all modules of this application. Note that the field
+     * must be annotated with @SmsInjection for this to work.
+     * @param name the name of the field to inject into
+     * @param value the value to inject
+     * @return the number of successful injections
+     */
+    public int inject(String name, Object value) {
+        int injections = 0;
+        for (Class<? extends SmsModule> module : moduleMap.keySet())
+            if (inject(name, value, module))
+                injections += 1;
+        return injections;
     }
 
 

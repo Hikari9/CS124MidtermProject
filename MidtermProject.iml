@@ -45,15 +45,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="ElegantSMS">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/ElegantSMS.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="apache" level="project" />
+    <orderEntry type="module" module-name="ElegantSMS" />
   </component>
 </module>

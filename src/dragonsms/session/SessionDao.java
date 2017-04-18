@@ -7,25 +7,22 @@ import javax.annotation.PostConstruct;
 
 import dragonsms.repositories.SessionRepository;
 
-// Singleton component to access the dao in hibernate, only visible to SessionManager
 @Component
-final class SessionDao {
+final class SessionDao { // only visible to SessionManager
 
     @Autowired
     protected SessionRepository dao;
-    public SessionRepository getDao() {
-        return dao;
-    }
 
-    private static SessionDao instance;
-    public static SessionDao getInstance() {
-        return instance;
+    protected static SessionRepository daoInstance;
+
+    public static SessionRepository getRepository() {
+        return daoInstance;
     }
 
     @PostConstruct
-    protected void setInstance() {
+    protected void postConstruct() {
         System.err.println("INFO: Autowired SessionRepository dao to SessionDao instance");
-        instance = this;
+        daoInstance = dao;
     }
 
 }
