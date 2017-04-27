@@ -1,0 +1,16 @@
+HINT
+REGISTER Rico
+START
+GO Room2
+swim
+takeSword
+look
+dig
+GO Room3
+look
+openChest
+GO Room4
+answer 200754
+GO Room5
+passphrase AlaKaZam
+exit
