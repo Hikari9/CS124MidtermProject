@@ -1,0 +1,8 @@
+Welcome to DragonSMS! Send HINT to get started!
+List of commands:
+	HINT               - shows list of commands
+	REGISTER <NAME>    - registers your name for the session
+	START              - starts a new session and goes to the first room
+	CONTINUE           - continues from a previous session
+	EXIT               - exits the application
+

@@ -1,27 +1,22 @@
 package dragonsms;
 
 import com.elegantsms.framework.SmsApplication;
-import com.elegantsms.framework.SmsPatternMismatchException;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintStream;
 
 import dragonsms.session.SessionManager;
 
 /**
- * Automatically replies to stream of messages.
+ * Creates a thread that accepts a stream of messages.
  */
 public class DragonServer extends Thread {
 
-    public final BufferedReader in;
-    public final PrintStream out;
+    public final IOStream io;
 
-    public DragonServer(InputStream input, OutputStream output) {
-        this.in = new BufferedReader(new InputStreamReader(input));
-        this.out = new PrintStream(output);
+    public DragonServer() {
+        this(new IOStream());
+    }
+
+    public DragonServer(IOStream io) {
+        this.io = io;
     }
 
     @Override
@@ -33,12 +28,19 @@ public class DragonServer extends Thread {
         app.inject("manager", manager);
 
         // read input indefinitely
-        in.lines().forEachOrdered(line -> {
-            String reply = app.getReplyNoThrow(line);
-            if (reply == null)
-                reply = "Invalid command. Send \"HINT\" for a list of possible commands.";
-            out.println(reply);
-        });
+        try {
+            String line;
+            while ((line = io.readLine()) != null) {
+                String reply = app.getReplyNoThrow(line);
+                if (reply == null)
+                    reply = "Invalid command. Send \"HINT\" for a list of possible commands.";
+                io.println(reply);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        } finally {
+            io.close();
+        }
     }
 
 }

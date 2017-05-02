@@ -2,24 +2,26 @@ package dragonsms;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 public class Main {
 
     // Driver program
     public static void main(String[] args) throws FileNotFoundException {
-        SpringDriver.run(); // load Spring
 
-        // it is possible to create two servers with their own modules
-        // first server in error stream, second server in output stream
-        DragonServer dragonServerIO = new DragonServer(System.in, System.err);
-        DragonServer dragonServerFile = new DragonServer(new FileInputStream("src/dragonsms/dragon.txt"),
-                                                         System.out);
+        // load Spring and Hibernate
+        SpringDriver.run();
+        DragonServer server = new DragonServer();
 
-        // start the two servers
-        dragonServerIO.start();
-        dragonServerFile.start();
+        // comment out to read from file
+        // server.io.setIn(new FileInputStream("src/dragonsms/dragon-in.txt"));
 
-        System.out.println("Welcome to DragonSMS! Send HINT to get started!");
+        // comment out to write to file
+        server.io.setOut(new FileOutputStream("src/dragonsms/dragon-out.txt"));
+
+        // start the server thread
+        server.io.println("Welcome to DragonSMS! Send HINT to get started!");
+        server.start();
 
     }
 }
