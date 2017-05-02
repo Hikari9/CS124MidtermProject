@@ -40,22 +40,36 @@ public class SessionManager {
     }
 
     /**
-     * Starts a new session with a name.
-     * @param name the name of the new session
-     */
-    public void startNewSession(String name) {
-        if (getRepository().exists(name))
-            session = getRepository().findOne(name);
-        else
-            session = getRepository().saveAndFlush(new Session(name));
-        System.err.println("Starting new session " + session);
-    }
-
-    /**
      * Ends the current session.
      */
     public void endSession() {
         session = null;
+    }
+
+    /**
+     * Restores a user session, if it exists.
+     * @param name the name of the user of the session to be restored
+     * @return true if successfully restored session, if name has had a previous session
+     */
+    public boolean restoreSession(String name) {
+        if (name == null || !getRepository().exists(name))
+            return false;
+        session = getRepository().findOne(name);
+        return true;
+    }
+
+    /**
+     * Starts a new session with a name.
+     * @param name the name of the new session
+     * @return true if successfully started new session
+     */
+    public boolean startNewSession(String name) {
+        if (name == null)
+            return false; // no new session started
+        if (getRepository().exists(name))
+            getRepository().delete(name);
+        session = getRepository().saveAndFlush(new Session(name));
+        return true;
     }
 
     /**

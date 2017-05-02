@@ -14,10 +14,10 @@ public class Main {
         DragonServer server = new DragonServer();
 
         // comment out to read from file
-        // server.io.setIn(new FileInputStream("src/dragonsms/dragon-in.txt"));
+        server.io.setIn(new FileInputStream("src/dragonsms/dragon-in.txt"));
 
         // comment out to write to file
-        server.io.setOut(new FileOutputStream("src/dragonsms/dragon-out.txt"));
+        // server.io.setOut(new FileOutputStream("src/dragonsms/dragon-out.txt"));
 
         // start the server thread
         server.io.println("Welcome to DragonSMS! Send HINT to get started!");

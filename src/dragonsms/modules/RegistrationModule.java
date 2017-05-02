@@ -18,30 +18,26 @@ public class RegistrationModule implements SmsModule {
 
     @SmsQuery("REGISTER <NAME>\n")
     public String register(String name) {
+        // end current session and register a new name
         manager.endSession();
         this.name = name;
-        if (manager.getRepository().findOne(name) == null)
-            return "Hello, " + name + ", welcome to DragonSMS. Send START to play.";
-        else
+        if (manager.getRepository().exists(name))
             return "Welcome back, " + name + ". Send CONTINUE to resume from your previous game, or START to start a new game.";
+        return "Hello, " + name + ", welcome to DragonSMS. Send START to play.";
     }
 
     @SmsQuery("CONTINUE")
     public String continueSession() {
-        if (name == null || !manager.getRepository().exists(name))
+        if (!manager.restoreSession(name))
             return "Invalid command, have you registered or started a session before?";
-        manager.startNewSession(name);
         name = null;
         return manager.checkRoom(manager.getSession().getRoomName());
     }
 
     @SmsQuery("START")
     public String start() {
-        if (name == null)
+        if (!manager.startNewSession(name))
             return "Cannot start session. Make sure you register your name first.";
-        if (manager.getRepository().exists(name))
-            manager.getRepository().delete(name);
-        manager.startNewSession(name); // starts new session
         name = null;
         return manager.checkRoom(manager.getSession().getRoomName()); // checkout Room1
     }
