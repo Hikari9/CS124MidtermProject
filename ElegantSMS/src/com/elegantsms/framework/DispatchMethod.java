@@ -38,7 +38,6 @@ class DispatchMethod implements Comparable<DispatchMethod> {
     private boolean[] identifierIsArray;
     private Parameter[] identifierParams; // array referencing to the actual parameters
 
-
     /**
      * Creates a DispatchMethod object based on module and method
      *
